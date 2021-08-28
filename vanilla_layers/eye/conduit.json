@@ -1,0 +1,33 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "eye": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -4.0,
+                -4.0,
+                0.0
+              ],
+              "dimensions": [
+                8.0,
+                8.0,
+                0.0
+              ],
+              "grow": 0.01
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 16,
+    "yTexSize": 16
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "segment2": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 9.0
+              },
+              "origin": [
+                -3.0,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                6.0,
+                4.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 20.0,
+            "z": 1.0
+          }
+        },
+        "segment1": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 4.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                -1.0
+              ],
+              "dimensions": [
+                4.0,
+                3.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 21.0,
+            "z": -1.5
+          }
+        },
+        "segment0": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -1.5,
+                0.0,
+                -1.0
+              ],
+              "dimensions": [
+                3.0,
+                2.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 22.0,
+            "z": -3.5
+          }
+        },
+        "layer0": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 20.0,
+                "v": 0.0
+              },
+              "origin": [
+                -5.0,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                10.0,
+                8.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 16.0,
+            "z": 1.0
+          }
+        },
+        "layer1": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 20.0,
+                "v": 11.0
+              },
+              "origin": [
+                -3.0,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                6.0,
+                4.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 20.0,
+            "z": 7.0
+          }
+        },
+        "layer2": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 20.0,
+                "v": 18.0
+              },
+              "origin": [
+                -3.0,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                6.0,
+                5.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 19.0,
+            "z": -1.5
+          }
+        },
+        "segment6": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 13.0,
+                "v": 4.0
+              },
+              "origin": [
+                -0.5,
+                0.0,
+                -1.0
+              ],
+              "dimensions": [
+                1.0,
+                1.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 23.0,
+            "z": 11.5
+          }
+        },
+        "segment5": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 11.0,
+                "v": 0.0
+              },
+              "origin": [
+                -1.0,
+                0.0,
+                -1.0
+              ],
+              "dimensions": [
+                2.0,
+                1.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 23.0,
+            "z": 9.5
+          }
+        },
+        "segment4": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 22.0
+              },
+              "origin": [
+                -1.0,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                2.0,
+                2.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 22.0,
+            "z": 7.0
+          }
+        },
+        "segment3": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 16.0
+              },
+              "origin": [
+                -1.5,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                3.0,
+                3.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 21.0,
+            "z": 4.0
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 32
+  }
+}

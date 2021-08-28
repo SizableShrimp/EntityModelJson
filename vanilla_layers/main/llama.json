@@ -1,0 +1,264 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "head": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -2.0,
+                -14.0,
+                -10.0
+              ],
+              "dimensions": [
+                4.0,
+                4.0,
+                9.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 14.0
+              },
+              "comment": "neck",
+              "origin": [
+                -4.0,
+                -16.0,
+                -6.0
+              ],
+              "dimensions": [
+                8.0,
+                18.0,
+                6.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 17.0,
+                "v": 0.0
+              },
+              "comment": "ear",
+              "origin": [
+                -4.0,
+                -19.0,
+                -4.0
+              ],
+              "dimensions": [
+                3.0,
+                3.0,
+                2.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 17.0,
+                "v": 0.0
+              },
+              "comment": "ear",
+              "origin": [
+                1.0,
+                -19.0,
+                -4.0
+              ],
+              "dimensions": [
+                3.0,
+                3.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 7.0,
+            "z": -6.0
+          }
+        },
+        "right_front_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 29.0,
+                "v": 29.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                -2.0
+              ],
+              "dimensions": [
+                4.0,
+                14.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -3.5,
+            "y": 10.0,
+            "z": -5.0
+          }
+        },
+        "right_hind_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 29.0,
+                "v": 29.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                -2.0
+              ],
+              "dimensions": [
+                4.0,
+                14.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -3.5,
+            "y": 10.0,
+            "z": 6.0
+          }
+        },
+        "right_chest": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 45.0,
+                "v": 28.0
+              },
+              "origin": [
+                -3.0,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                8.0,
+                8.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "yRot": 1.5707964,
+            "x": -8.5,
+            "y": 3.0,
+            "z": 3.0
+          }
+        },
+        "left_hind_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 29.0,
+                "v": 29.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                -2.0
+              ],
+              "dimensions": [
+                4.0,
+                14.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 3.5,
+            "y": 10.0,
+            "z": 6.0
+          }
+        },
+        "body": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 29.0,
+                "v": 0.0
+              },
+              "origin": [
+                -6.0,
+                -10.0,
+                -7.0
+              ],
+              "dimensions": [
+                12.0,
+                18.0,
+                10.0
+              ]
+            }
+          ],
+          "partPose": {
+            "xRot": 1.5707964,
+            "y": 5.0,
+            "z": 2.0
+          }
+        },
+        "left_front_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 29.0,
+                "v": 29.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                -2.0
+              ],
+              "dimensions": [
+                4.0,
+                14.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 3.5,
+            "y": 10.0,
+            "z": -5.0
+          }
+        },
+        "left_chest": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 45.0,
+                "v": 41.0
+              },
+              "origin": [
+                -3.0,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                8.0,
+                8.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "yRot": 1.5707964,
+            "x": 5.5,
+            "y": 3.0,
+            "z": 3.0
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 128,
+    "yTexSize": 64
+  }
+}

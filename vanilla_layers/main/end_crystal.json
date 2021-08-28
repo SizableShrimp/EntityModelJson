@@ -1,0 +1,72 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "glass": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -4.0,
+                -4.0,
+                -4.0
+              ],
+              "dimensions": [
+                8.0,
+                8.0,
+                8.0
+              ]
+            }
+          ]
+        },
+        "cube": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 32.0,
+                "v": 0.0
+              },
+              "origin": [
+                -4.0,
+                -4.0,
+                -4.0
+              ],
+              "dimensions": [
+                8.0,
+                8.0,
+                8.0
+              ]
+            }
+          ]
+        },
+        "base": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 16.0
+              },
+              "origin": [
+                -6.0,
+                0.0,
+                -6.0
+              ],
+              "dimensions": [
+                12.0,
+                4.0,
+                12.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 32
+  }
+}

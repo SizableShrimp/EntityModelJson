@@ -1,0 +1,147 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "head": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 176.0,
+                "v": 44.0
+              },
+              "comment": "upper_lip",
+              "origin": [
+                -6.0,
+                -1.0,
+                -24.0
+              ],
+              "dimensions": [
+                12.0,
+                5.0,
+                16.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 112.0,
+                "v": 30.0
+              },
+              "comment": "upper_head",
+              "origin": [
+                -8.0,
+                -8.0,
+                -10.0
+              ],
+              "dimensions": [
+                16.0,
+                16.0,
+                16.0
+              ]
+            },
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "comment": "scale",
+              "origin": [
+                -5.0,
+                -12.0,
+                -4.0
+              ],
+              "dimensions": [
+                2.0,
+                4.0,
+                6.0
+              ]
+            },
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 112.0,
+                "v": 0.0
+              },
+              "comment": "nostril",
+              "origin": [
+                -5.0,
+                -3.0,
+                -22.0
+              ],
+              "dimensions": [
+                2.0,
+                2.0,
+                4.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "comment": "scale",
+              "origin": [
+                3.0,
+                -12.0,
+                -4.0
+              ],
+              "dimensions": [
+                2.0,
+                4.0,
+                6.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 112.0,
+                "v": 0.0
+              },
+              "comment": "nostril",
+              "origin": [
+                3.0,
+                -3.0,
+                -22.0
+              ],
+              "dimensions": [
+                2.0,
+                2.0,
+                4.0
+              ]
+            }
+          ],
+          "children": {
+            "jaw": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 176.0,
+                    "v": 65.0
+                  },
+                  "comment": "jaw",
+                  "origin": [
+                    -6.0,
+                    0.0,
+                    -16.0
+                  ],
+                  "dimensions": [
+                    12.0,
+                    4.0,
+                    16.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "y": 4.0,
+                "z": -8.0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 256,
+    "yTexSize": 256
+  }
+}

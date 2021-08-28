@@ -1,0 +1,72 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "bar": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 42.0
+              },
+              "origin": [
+                -10.0,
+                -32.0,
+                -1.0
+              ],
+              "dimensions": [
+                20.0,
+                2.0,
+                2.0
+              ]
+            }
+          ]
+        },
+        "flag": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -10.0,
+                0.0,
+                -2.0
+              ],
+              "dimensions": [
+                20.0,
+                40.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "pole": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 44.0,
+                "v": 0.0
+              },
+              "origin": [
+                -1.0,
+                -30.0,
+                -1.0
+              ],
+              "dimensions": [
+                2.0,
+                42.0,
+                2.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 64
+  }
+}

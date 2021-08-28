@@ -1,0 +1,161 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "right_pages": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 12.0,
+                "v": 10.0
+              },
+              "origin": [
+                0.0,
+                -4.0,
+                -0.01
+              ],
+              "dimensions": [
+                5.0,
+                8.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "left_pages": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 10.0
+              },
+              "origin": [
+                0.0,
+                -4.0,
+                -0.99
+              ],
+              "dimensions": [
+                5.0,
+                8.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "right_lid": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 16.0,
+                "v": 0.0
+              },
+              "origin": [
+                0.0,
+                -5.0,
+                -0.005
+              ],
+              "dimensions": [
+                6.0,
+                10.0,
+                0.005
+              ]
+            }
+          ],
+          "partPose": {
+            "z": 1.0
+          }
+        },
+        "flip_page2": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 24.0,
+                "v": 10.0
+              },
+              "origin": [
+                0.0,
+                -4.0,
+                0.0
+              ],
+              "dimensions": [
+                5.0,
+                8.0,
+                0.005
+              ]
+            }
+          ]
+        },
+        "seam": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 12.0,
+                "v": 0.0
+              },
+              "origin": [
+                -1.0,
+                -5.0,
+                0.0
+              ],
+              "dimensions": [
+                2.0,
+                10.0,
+                0.005
+              ]
+            }
+          ],
+          "partPose": {
+            "yRot": 1.5707964
+          }
+        },
+        "flip_page1": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 24.0,
+                "v": 10.0
+              },
+              "origin": [
+                0.0,
+                -4.0,
+                0.0
+              ],
+              "dimensions": [
+                5.0,
+                8.0,
+                0.005
+              ]
+            }
+          ]
+        },
+        "left_lid": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -6.0,
+                -5.0,
+                -0.005
+              ],
+              "dimensions": [
+                6.0,
+                10.0,
+                0.005
+              ]
+            }
+          ],
+          "partPose": {
+            "z": -1.0
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 32
+  }
+}

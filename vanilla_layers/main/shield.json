@@ -1,0 +1,52 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "plate": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -6.0,
+                -11.0,
+                -2.0
+              ],
+              "dimensions": [
+                12.0,
+                22.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "handle": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 26.0,
+                "v": 0.0
+              },
+              "origin": [
+                -1.0,
+                -3.0,
+                -1.0
+              ],
+              "dimensions": [
+                2.0,
+                6.0,
+                6.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 64
+  }
+}

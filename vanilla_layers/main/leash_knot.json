@@ -1,0 +1,32 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "knot": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -3.0,
+                -8.0,
+                -3.0
+              ],
+              "dimensions": [
+                6.0,
+                8.0,
+                6.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 32,
+    "yTexSize": 32
+  }
+}

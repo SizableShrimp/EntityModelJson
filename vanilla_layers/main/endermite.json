@@ -1,0 +1,107 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "segment2": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 14.0
+              },
+              "origin": [
+                -1.5,
+                0.0,
+                -0.5
+              ],
+              "dimensions": [
+                3.0,
+                3.0,
+                1.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 21.0,
+            "z": 3.0
+          }
+        },
+        "segment1": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 5.0
+              },
+              "origin": [
+                -3.0,
+                0.0,
+                -2.5
+              ],
+              "dimensions": [
+                6.0,
+                4.0,
+                5.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 20.0
+          }
+        },
+        "segment0": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                -1.0
+              ],
+              "dimensions": [
+                4.0,
+                3.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 21.0,
+            "z": -3.5
+          }
+        },
+        "segment3": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 18.0
+              },
+              "origin": [
+                -0.5,
+                0.0,
+                -0.5
+              ],
+              "dimensions": [
+                1.0,
+                2.0,
+                1.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 22.0,
+            "z": 4.0
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 32
+  }
+}

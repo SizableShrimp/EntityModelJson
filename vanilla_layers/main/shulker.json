@@ -1,0 +1,81 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "head": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 52.0
+              },
+              "origin": [
+                -3.0,
+                0.0,
+                -3.0
+              ],
+              "dimensions": [
+                6.0,
+                6.0,
+                6.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 12.0
+          }
+        },
+        "lid": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -8.0,
+                -16.0,
+                -8.0
+              ],
+              "dimensions": [
+                16.0,
+                12.0,
+                16.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 24.0
+          }
+        },
+        "base": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 28.0
+              },
+              "origin": [
+                -8.0,
+                -8.0,
+                -8.0
+              ],
+              "dimensions": [
+                16.0,
+                8.0,
+                16.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 24.0
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 64
+  }
+}

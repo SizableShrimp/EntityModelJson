@@ -1,0 +1,64 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "bell_body": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -3.0,
+                -6.0,
+                -3.0
+              ],
+              "dimensions": [
+                6.0,
+                7.0,
+                6.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 8.0,
+            "y": 12.0,
+            "z": 8.0
+          },
+          "children": {
+            "bell_base": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 0.0,
+                    "v": 13.0
+                  },
+                  "origin": [
+                    4.0,
+                    4.0,
+                    4.0
+                  ],
+                  "dimensions": [
+                    8.0,
+                    2.0,
+                    8.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": -8.0,
+                "y": -12.0,
+                "z": -8.0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 32,
+    "yTexSize": 32
+  }
+}

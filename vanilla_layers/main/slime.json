@@ -1,0 +1,92 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "right_eye": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 32.0,
+                "v": 0.0
+              },
+              "origin": [
+                -3.25,
+                18.0,
+                -3.5
+              ],
+              "dimensions": [
+                2.0,
+                2.0,
+                2.0
+              ]
+            }
+          ]
+        },
+        "mouth": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 32.0,
+                "v": 8.0
+              },
+              "origin": [
+                0.0,
+                21.0,
+                -3.5
+              ],
+              "dimensions": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "left_eye": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 32.0,
+                "v": 4.0
+              },
+              "origin": [
+                1.25,
+                18.0,
+                -3.5
+              ],
+              "dimensions": [
+                2.0,
+                2.0,
+                2.0
+              ]
+            }
+          ]
+        },
+        "cube": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 16.0
+              },
+              "origin": [
+                -3.0,
+                17.0,
+                -3.0
+              ],
+              "dimensions": [
+                6.0,
+                6.0,
+                6.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 32
+  }
+}

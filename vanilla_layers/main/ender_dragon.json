@@ -1,0 +1,757 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "head": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 176.0,
+                "v": 44.0
+              },
+              "comment": "upperlip",
+              "origin": [
+                -6.0,
+                -1.0,
+                -24.0
+              ],
+              "dimensions": [
+                12.0,
+                5.0,
+                16.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 112.0,
+                "v": 30.0
+              },
+              "comment": "upperhead",
+              "origin": [
+                -8.0,
+                -8.0,
+                -10.0
+              ],
+              "dimensions": [
+                16.0,
+                16.0,
+                16.0
+              ]
+            },
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "comment": "scale",
+              "origin": [
+                -5.0,
+                -12.0,
+                -4.0
+              ],
+              "dimensions": [
+                2.0,
+                4.0,
+                6.0
+              ]
+            },
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 112.0,
+                "v": 0.0
+              },
+              "comment": "nostril",
+              "origin": [
+                -5.0,
+                -3.0,
+                -22.0
+              ],
+              "dimensions": [
+                2.0,
+                2.0,
+                4.0
+              ]
+            },
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "comment": "scale",
+              "origin": [
+                3.0,
+                -12.0,
+                -4.0
+              ],
+              "dimensions": [
+                2.0,
+                4.0,
+                6.0
+              ]
+            },
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 112.0,
+                "v": 0.0
+              },
+              "comment": "nostril",
+              "origin": [
+                3.0,
+                -3.0,
+                -22.0
+              ],
+              "dimensions": [
+                2.0,
+                2.0,
+                4.0
+              ]
+            }
+          ],
+          "children": {
+            "jaw": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 176.0,
+                    "v": 65.0
+                  },
+                  "comment": "jaw",
+                  "origin": [
+                    -6.0,
+                    0.0,
+                    -16.0
+                  ],
+                  "dimensions": [
+                    12.0,
+                    4.0,
+                    16.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "y": 4.0,
+                "z": -8.0
+              }
+            }
+          }
+        },
+        "right_front_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 112.0,
+                "v": 104.0
+              },
+              "comment": "main",
+              "origin": [
+                -4.0,
+                -4.0,
+                -4.0
+              ],
+              "dimensions": [
+                8.0,
+                24.0,
+                8.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -12.0,
+            "y": 20.0,
+            "z": 2.0
+          },
+          "children": {
+            "right_front_leg_tip": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 226.0,
+                    "v": 138.0
+                  },
+                  "comment": "main",
+                  "origin": [
+                    -3.0,
+                    -1.0,
+                    -3.0
+                  ],
+                  "dimensions": [
+                    6.0,
+                    24.0,
+                    6.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "y": 20.0,
+                "z": -1.0
+              },
+              "children": {
+                "right_front_foot": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 144.0,
+                        "v": 104.0
+                      },
+                      "comment": "main",
+                      "origin": [
+                        -4.0,
+                        0.0,
+                        -12.0
+                      ],
+                      "dimensions": [
+                        8.0,
+                        4.0,
+                        16.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "y": 23.0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "right_hind_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "comment": "main",
+              "origin": [
+                -8.0,
+                -4.0,
+                -8.0
+              ],
+              "dimensions": [
+                16.0,
+                32.0,
+                16.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -16.0,
+            "y": 16.0,
+            "z": 42.0
+          },
+          "children": {
+            "right_hind_leg_tip": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 196.0,
+                    "v": 0.0
+                  },
+                  "comment": "main",
+                  "origin": [
+                    -6.0,
+                    -2.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    12.0,
+                    32.0,
+                    12.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "y": 32.0,
+                "z": -4.0
+              },
+              "children": {
+                "right_hind_foot": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 112.0,
+                        "v": 0.0
+                      },
+                      "comment": "main",
+                      "origin": [
+                        -9.0,
+                        0.0,
+                        -20.0
+                      ],
+                      "dimensions": [
+                        18.0,
+                        6.0,
+                        24.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "y": 31.0,
+                    "z": 4.0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "right_wing": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 112.0,
+                "v": 88.0
+              },
+              "comment": "bone",
+              "origin": [
+                -56.0,
+                -4.0,
+                -4.0
+              ],
+              "dimensions": [
+                56.0,
+                8.0,
+                8.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": -56.0,
+                "v": 88.0
+              },
+              "comment": "skin",
+              "origin": [
+                -56.0,
+                0.0,
+                2.0
+              ],
+              "dimensions": [
+                56.0,
+                0.0,
+                56.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -12.0,
+            "y": 5.0,
+            "z": 2.0
+          },
+          "children": {
+            "right_wing_tip": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 112.0,
+                    "v": 136.0
+                  },
+                  "comment": "bone",
+                  "origin": [
+                    -56.0,
+                    -2.0,
+                    -2.0
+                  ],
+                  "dimensions": [
+                    56.0,
+                    4.0,
+                    4.0
+                  ]
+                },
+                {
+                  "texCoord": {
+                    "u": -56.0,
+                    "v": 144.0
+                  },
+                  "comment": "skin",
+                  "origin": [
+                    -56.0,
+                    0.0,
+                    2.0
+                  ],
+                  "dimensions": [
+                    56.0,
+                    0.0,
+                    56.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": -56.0
+              }
+            }
+          }
+        },
+        "left_wing": {
+          "cubes": [
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 112.0,
+                "v": 88.0
+              },
+              "comment": "bone",
+              "origin": [
+                0.0,
+                -4.0,
+                -4.0
+              ],
+              "dimensions": [
+                56.0,
+                8.0,
+                8.0
+              ]
+            },
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": -56.0,
+                "v": 88.0
+              },
+              "comment": "skin",
+              "origin": [
+                0.0,
+                0.0,
+                2.0
+              ],
+              "dimensions": [
+                56.0,
+                0.0,
+                56.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 12.0,
+            "y": 5.0,
+            "z": 2.0
+          },
+          "children": {
+            "left_wing_tip": {
+              "cubes": [
+                {
+                  "mirror": true,
+                  "texCoord": {
+                    "u": 112.0,
+                    "v": 136.0
+                  },
+                  "comment": "bone",
+                  "origin": [
+                    0.0,
+                    -2.0,
+                    -2.0
+                  ],
+                  "dimensions": [
+                    56.0,
+                    4.0,
+                    4.0
+                  ]
+                },
+                {
+                  "mirror": true,
+                  "texCoord": {
+                    "u": -56.0,
+                    "v": 144.0
+                  },
+                  "comment": "skin",
+                  "origin": [
+                    0.0,
+                    0.0,
+                    2.0
+                  ],
+                  "dimensions": [
+                    56.0,
+                    0.0,
+                    56.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": 56.0
+              }
+            }
+          }
+        },
+        "left_hind_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "comment": "main",
+              "origin": [
+                -8.0,
+                -4.0,
+                -8.0
+              ],
+              "dimensions": [
+                16.0,
+                32.0,
+                16.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 16.0,
+            "y": 16.0,
+            "z": 42.0
+          },
+          "children": {
+            "left_hind_leg_tip": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 196.0,
+                    "v": 0.0
+                  },
+                  "comment": "main",
+                  "origin": [
+                    -6.0,
+                    -2.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    12.0,
+                    32.0,
+                    12.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "y": 32.0,
+                "z": -4.0
+              },
+              "children": {
+                "left_hind_foot": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 112.0,
+                        "v": 0.0
+                      },
+                      "comment": "main",
+                      "origin": [
+                        -9.0,
+                        0.0,
+                        -20.0
+                      ],
+                      "dimensions": [
+                        18.0,
+                        6.0,
+                        24.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "y": 31.0,
+                    "z": 4.0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "neck": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 192.0,
+                "v": 104.0
+              },
+              "comment": "box",
+              "origin": [
+                -5.0,
+                -5.0,
+                -5.0
+              ],
+              "dimensions": [
+                10.0,
+                10.0,
+                10.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 48.0,
+                "v": 0.0
+              },
+              "comment": "scale",
+              "origin": [
+                -1.0,
+                -9.0,
+                -3.0
+              ],
+              "dimensions": [
+                2.0,
+                4.0,
+                6.0
+              ]
+            }
+          ]
+        },
+        "body": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "comment": "body",
+              "origin": [
+                -12.0,
+                0.0,
+                -16.0
+              ],
+              "dimensions": [
+                24.0,
+                24.0,
+                64.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 220.0,
+                "v": 53.0
+              },
+              "comment": "scale",
+              "origin": [
+                -1.0,
+                -6.0,
+                -10.0
+              ],
+              "dimensions": [
+                2.0,
+                6.0,
+                12.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 220.0,
+                "v": 53.0
+              },
+              "comment": "scale",
+              "origin": [
+                -1.0,
+                -6.0,
+                10.0
+              ],
+              "dimensions": [
+                2.0,
+                6.0,
+                12.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 220.0,
+                "v": 53.0
+              },
+              "comment": "scale",
+              "origin": [
+                -1.0,
+                -6.0,
+                30.0
+              ],
+              "dimensions": [
+                2.0,
+                6.0,
+                12.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 4.0,
+            "z": 8.0
+          }
+        },
+        "left_front_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 112.0,
+                "v": 104.0
+              },
+              "comment": "main",
+              "origin": [
+                -4.0,
+                -4.0,
+                -4.0
+              ],
+              "dimensions": [
+                8.0,
+                24.0,
+                8.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 12.0,
+            "y": 20.0,
+            "z": 2.0
+          },
+          "children": {
+            "left_front_leg_tip": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 226.0,
+                    "v": 138.0
+                  },
+                  "comment": "main",
+                  "origin": [
+                    -3.0,
+                    -1.0,
+                    -3.0
+                  ],
+                  "dimensions": [
+                    6.0,
+                    24.0,
+                    6.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "y": 20.0,
+                "z": -1.0
+              },
+              "children": {
+                "left_front_foot": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 144.0,
+                        "v": 104.0
+                      },
+                      "comment": "main",
+                      "origin": [
+                        -4.0,
+                        0.0,
+                        -12.0
+                      ],
+                      "dimensions": [
+                        8.0,
+                        4.0,
+                        16.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "y": 23.0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 256,
+    "yTexSize": 256
+  }
+}

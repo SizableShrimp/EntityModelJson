@@ -1,0 +1,155 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "right_eye": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 24.0,
+                "v": 6.0
+              },
+              "origin": [
+                -1.5,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 20.0
+          }
+        },
+        "left_fin": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 25.0,
+                "v": 0.0
+              },
+              "origin": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                1.0,
+                0.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 1.5,
+            "y": 22.0,
+            "z": -1.5
+          }
+        },
+        "right_fin": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 25.0,
+                "v": 0.0
+              },
+              "origin": [
+                -1.0,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                1.0,
+                0.0,
+                2.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -1.5,
+            "y": 22.0,
+            "z": -1.5
+          }
+        },
+        "left_eye": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 28.0,
+                "v": 6.0
+              },
+              "origin": [
+                0.5,
+                0.0,
+                -1.5
+              ],
+              "dimensions": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 20.0
+          }
+        },
+        "body": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 27.0
+              },
+              "origin": [
+                -1.5,
+                -2.0,
+                -1.5
+              ],
+              "dimensions": [
+                3.0,
+                2.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 23.0
+          }
+        },
+        "back_fin": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": -3.0,
+                "v": 0.0
+              },
+              "origin": [
+                -1.5,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                3.0,
+                0.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 22.0,
+            "z": 1.5
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 32,
+    "yTexSize": 32
+  }
+}

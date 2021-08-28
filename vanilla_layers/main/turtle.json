@@ -1,0 +1,204 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "head": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 3.0,
+                "v": 0.0
+              },
+              "origin": [
+                -3.0,
+                -1.0,
+                -3.0
+              ],
+              "dimensions": [
+                6.0,
+                5.0,
+                6.0
+              ]
+            }
+          ],
+          "partPose": {
+            "y": 19.0,
+            "z": -10.0
+          }
+        },
+        "right_front_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 27.0,
+                "v": 30.0
+              },
+              "origin": [
+                -13.0,
+                0.0,
+                -2.0
+              ],
+              "dimensions": [
+                13.0,
+                1.0,
+                5.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -5.0,
+            "y": 21.0,
+            "z": -4.0
+          }
+        },
+        "right_hind_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 1.0,
+                "v": 23.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                4.0,
+                1.0,
+                10.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -3.5,
+            "y": 22.0,
+            "z": 11.0
+          }
+        },
+        "egg_belly": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 70.0,
+                "v": 33.0
+              },
+              "origin": [
+                -4.5,
+                3.0,
+                -14.0
+              ],
+              "dimensions": [
+                9.0,
+                18.0,
+                1.0
+              ]
+            }
+          ],
+          "partPose": {
+            "xRot": 1.5707964,
+            "y": 11.0,
+            "z": -10.0
+          }
+        },
+        "left_hind_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 1.0,
+                "v": 12.0
+              },
+              "origin": [
+                -2.0,
+                0.0,
+                0.0
+              ],
+              "dimensions": [
+                4.0,
+                1.0,
+                10.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 3.5,
+            "y": 22.0,
+            "z": 11.0
+          }
+        },
+        "body": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 7.0,
+                "v": 37.0
+              },
+              "comment": "shell",
+              "origin": [
+                -9.5,
+                3.0,
+                -10.0
+              ],
+              "dimensions": [
+                19.0,
+                20.0,
+                6.0
+              ]
+            },
+            {
+              "texCoord": {
+                "u": 31.0,
+                "v": 1.0
+              },
+              "comment": "belly",
+              "origin": [
+                -5.5,
+                3.0,
+                -13.0
+              ],
+              "dimensions": [
+                11.0,
+                18.0,
+                3.0
+              ]
+            }
+          ],
+          "partPose": {
+            "xRot": 1.5707964,
+            "y": 11.0,
+            "z": -10.0
+          }
+        },
+        "left_front_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 27.0,
+                "v": 24.0
+              },
+              "origin": [
+                0.0,
+                0.0,
+                -2.0
+              ],
+              "dimensions": [
+                13.0,
+                1.0,
+                5.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 5.0,
+            "y": 21.0,
+            "z": -4.0
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 128,
+    "yTexSize": 64
+  }
+}

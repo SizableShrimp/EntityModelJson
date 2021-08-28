@@ -1,0 +1,560 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "right_front_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -1.0,
+                -1.01,
+                -1.9
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -4.0,
+            "y": 14.0,
+            "z": -12.0
+          }
+        },
+        "right_hind_baby_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -1.0,
+                -1.01,
+                -1.0
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ],
+              "grow": {
+                "growY": 5.5
+              }
+            }
+          ],
+          "partPose": {
+            "x": -4.0,
+            "y": 14.0,
+            "z": 7.0
+          }
+        },
+        "left_front_baby_leg": {
+          "cubes": [
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -3.0,
+                -1.01,
+                -1.9
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ],
+              "grow": {
+                "growY": 5.5
+              }
+            }
+          ],
+          "partPose": {
+            "x": 4.0,
+            "y": 14.0,
+            "z": -12.0
+          }
+        },
+        "right_hind_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -1.0,
+                -1.01,
+                -1.0
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": -4.0,
+            "y": 14.0,
+            "z": 7.0
+          }
+        },
+        "right_front_baby_leg": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -1.0,
+                -1.01,
+                -1.9
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ],
+              "grow": {
+                "growY": 5.5
+              }
+            }
+          ],
+          "partPose": {
+            "x": -4.0,
+            "y": 14.0,
+            "z": -12.0
+          }
+        },
+        "head_parts": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 35.0
+              },
+              "origin": [
+                -2.05,
+                -6.0,
+                -2.0
+              ],
+              "dimensions": [
+                4.0,
+                12.0,
+                7.0
+              ]
+            }
+          ],
+          "partPose": {
+            "xRot": 0.5235988,
+            "y": 4.0,
+            "z": -12.0
+          },
+          "children": {
+            "head": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 0.0,
+                    "v": 13.0
+                  },
+                  "origin": [
+                    -3.0,
+                    -11.0,
+                    -2.0
+                  ],
+                  "dimensions": [
+                    6.0,
+                    5.0,
+                    7.0
+                  ]
+                }
+              ],
+              "children": {
+                "right_ear": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 19.0,
+                        "v": 16.0
+                      },
+                      "origin": [
+                        -2.55,
+                        -13.0,
+                        4.0
+                      ],
+                      "dimensions": [
+                        2.0,
+                        3.0,
+                        1.0
+                      ],
+                      "grow": -0.001
+                    }
+                  ]
+                },
+                "left_ear": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 19.0,
+                        "v": 16.0
+                      },
+                      "origin": [
+                        0.55,
+                        -13.0,
+                        4.0
+                      ],
+                      "dimensions": [
+                        2.0,
+                        3.0,
+                        1.0
+                      ],
+                      "grow": -0.001
+                    }
+                  ]
+                }
+              }
+            },
+            "left_saddle_mouth": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 29.0,
+                    "v": 5.0
+                  },
+                  "origin": [
+                    2.0,
+                    -9.0,
+                    -6.0
+                  ],
+                  "dimensions": [
+                    1.0,
+                    2.0,
+                    2.0
+                  ]
+                }
+              ]
+            },
+            "mouth_saddle_wrap": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 19.0,
+                    "v": 0.0
+                  },
+                  "origin": [
+                    -2.0,
+                    -11.0,
+                    -4.0
+                  ],
+                  "dimensions": [
+                    4.0,
+                    5.0,
+                    2.0
+                  ],
+                  "grow": 0.2
+                }
+              ]
+            },
+            "right_saddle_line": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 32.0,
+                    "v": 2.0
+                  },
+                  "origin": [
+                    -3.1,
+                    -6.0,
+                    -8.0
+                  ],
+                  "dimensions": [
+                    0.0,
+                    3.0,
+                    16.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "xRot": -0.5235988
+              }
+            },
+            "mane": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 56.0,
+                    "v": 36.0
+                  },
+                  "origin": [
+                    -1.0,
+                    -11.0,
+                    5.01
+                  ],
+                  "dimensions": [
+                    2.0,
+                    16.0,
+                    2.0
+                  ]
+                }
+              ]
+            },
+            "right_saddle_mouth": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 29.0,
+                    "v": 5.0
+                  },
+                  "origin": [
+                    -3.0,
+                    -9.0,
+                    -6.0
+                  ],
+                  "dimensions": [
+                    1.0,
+                    2.0,
+                    2.0
+                  ]
+                }
+              ]
+            },
+            "left_saddle_line": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 32.0,
+                    "v": 2.0
+                  },
+                  "origin": [
+                    3.1,
+                    -6.0,
+                    -8.0
+                  ],
+                  "dimensions": [
+                    0.0,
+                    3.0,
+                    16.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "xRot": -0.5235988
+              }
+            },
+            "upper_mouth": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 0.0,
+                    "v": 25.0
+                  },
+                  "origin": [
+                    -2.0,
+                    -11.0,
+                    -7.0
+                  ],
+                  "dimensions": [
+                    4.0,
+                    5.0,
+                    5.0
+                  ]
+                }
+              ]
+            },
+            "head_saddle": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 1.0,
+                    "v": 1.0
+                  },
+                  "origin": [
+                    -3.0,
+                    -11.0,
+                    -1.9
+                  ],
+                  "dimensions": [
+                    6.0,
+                    5.0,
+                    6.0
+                  ],
+                  "grow": 0.2
+                }
+              ]
+            }
+          }
+        },
+        "left_hind_leg": {
+          "cubes": [
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -3.0,
+                -1.01,
+                -1.0
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 4.0,
+            "y": 14.0,
+            "z": 7.0
+          }
+        },
+        "body": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 32.0
+              },
+              "origin": [
+                -5.0,
+                -8.0,
+                -17.0
+              ],
+              "dimensions": [
+                10.0,
+                10.0,
+                22.0
+              ],
+              "grow": 0.05
+            }
+          ],
+          "partPose": {
+            "y": 11.0,
+            "z": 5.0
+          },
+          "children": {
+            "saddle": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 26.0,
+                    "v": 0.0
+                  },
+                  "origin": [
+                    -5.0,
+                    -8.0,
+                    -9.0
+                  ],
+                  "dimensions": [
+                    10.0,
+                    9.0,
+                    9.0
+                  ],
+                  "grow": 0.5
+                }
+              ]
+            },
+            "tail": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 42.0,
+                    "v": 36.0
+                  },
+                  "origin": [
+                    -1.5,
+                    0.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    3.0,
+                    14.0,
+                    4.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "xRot": 0.5235988,
+                "y": -5.0,
+                "z": 2.0
+              }
+            }
+          }
+        },
+        "left_front_leg": {
+          "cubes": [
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -3.0,
+                -1.01,
+                -1.9
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ]
+            }
+          ],
+          "partPose": {
+            "x": 4.0,
+            "y": 14.0,
+            "z": -12.0
+          }
+        },
+        "left_hind_baby_leg": {
+          "cubes": [
+            {
+              "mirror": true,
+              "texCoord": {
+                "u": 48.0,
+                "v": 21.0
+              },
+              "origin": [
+                -3.0,
+                -1.01,
+                -1.0
+              ],
+              "dimensions": [
+                4.0,
+                11.0,
+                4.0
+              ],
+              "grow": {
+                "growY": 5.5
+              }
+            }
+          ],
+          "partPose": {
+            "x": 4.0,
+            "y": 14.0,
+            "z": 7.0
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 64
+  }
+}

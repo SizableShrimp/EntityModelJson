@@ -1,0 +1,241 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "bone": {
+          "partPose": {
+            "y": 19.0
+          },
+          "children": {
+            "front_legs": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 26.0,
+                    "v": 1.0
+                  },
+                  "comment": "front_legs",
+                  "origin": [
+                    -5.0,
+                    0.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    7.0,
+                    2.0,
+                    0.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": 1.5,
+                "y": 3.0,
+                "z": -2.0
+              }
+            },
+            "right_wing": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 0.0,
+                    "v": 18.0
+                  },
+                  "origin": [
+                    -9.0,
+                    0.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    9.0,
+                    0.0,
+                    6.0
+                  ],
+                  "grow": 0.001
+                }
+              ],
+              "partPose": {
+                "yRot": -0.2618,
+                "x": -1.5,
+                "y": -4.0,
+                "z": -3.0
+              }
+            },
+            "left_wing": {
+              "cubes": [
+                {
+                  "mirror": true,
+                  "texCoord": {
+                    "u": 0.0,
+                    "v": 18.0
+                  },
+                  "origin": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    9.0,
+                    0.0,
+                    6.0
+                  ],
+                  "grow": 0.001
+                }
+              ],
+              "partPose": {
+                "yRot": 0.2618,
+                "x": 1.5,
+                "y": -4.0,
+                "z": -3.0
+              }
+            },
+            "middle_legs": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 26.0,
+                    "v": 3.0
+                  },
+                  "comment": "middle_legs",
+                  "origin": [
+                    -5.0,
+                    0.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    7.0,
+                    2.0,
+                    0.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": 1.5,
+                "y": 3.0
+              }
+            },
+            "body": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 0.0,
+                    "v": 0.0
+                  },
+                  "origin": [
+                    -3.5,
+                    -4.0,
+                    -5.0
+                  ],
+                  "dimensions": [
+                    7.0,
+                    7.0,
+                    10.0
+                  ]
+                }
+              ],
+              "children": {
+                "right_antenna": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 2.0,
+                        "v": 3.0
+                      },
+                      "origin": [
+                        -2.5,
+                        -2.0,
+                        -3.0
+                      ],
+                      "dimensions": [
+                        1.0,
+                        2.0,
+                        3.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "y": -2.0,
+                    "z": -5.0
+                  }
+                },
+                "stinger": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 26.0,
+                        "v": 7.0
+                      },
+                      "origin": [
+                        0.0,
+                        -1.0,
+                        5.0
+                      ],
+                      "dimensions": [
+                        0.0,
+                        1.0,
+                        2.0
+                      ]
+                    }
+                  ]
+                },
+                "left_antenna": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 2.0,
+                        "v": 0.0
+                      },
+                      "origin": [
+                        1.5,
+                        -2.0,
+                        -3.0
+                      ],
+                      "dimensions": [
+                        1.0,
+                        2.0,
+                        3.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "y": -2.0,
+                    "z": -5.0
+                  }
+                }
+              }
+            },
+            "back_legs": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 26.0,
+                    "v": 5.0
+                  },
+                  "comment": "back_legs",
+                  "origin": [
+                    -5.0,
+                    0.0,
+                    0.0
+                  ],
+                  "dimensions": [
+                    7.0,
+                    2.0,
+                    0.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": 1.5,
+                "y": 3.0,
+                "z": 2.0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 64
+  }
+}

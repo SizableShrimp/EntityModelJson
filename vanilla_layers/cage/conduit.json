@@ -1,0 +1,32 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "shell": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -4.0,
+                -4.0,
+                -4.0
+              ],
+              "dimensions": [
+                8.0,
+                8.0,
+                8.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 32,
+    "yTexSize": 16
+  }
+}

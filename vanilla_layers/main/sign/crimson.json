@@ -1,0 +1,52 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "sign": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 0.0
+              },
+              "origin": [
+                -12.0,
+                -14.0,
+                -1.0
+              ],
+              "dimensions": [
+                24.0,
+                12.0,
+                2.0
+              ]
+            }
+          ]
+        },
+        "stick": {
+          "cubes": [
+            {
+              "texCoord": {
+                "u": 0.0,
+                "v": 14.0
+              },
+              "origin": [
+                -1.0,
+                -2.0,
+                -1.0
+              ],
+              "dimensions": [
+                2.0,
+                14.0,
+                2.0
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 64,
+    "yTexSize": 32
+  }
+}
