@@ -1,4 +1,4 @@
-// This JSON file holds the complete specification for JSON-defined entity models.
+// This JSON file holds the complete specification for JSON-defined entity models. It only ends in .json5 for formatting purposes.
 // Note that this should be used as a reference, and not copied directly. Comments are not allowed in the final JSON file.
 {
   // The mesh definition holds all children, cubes, and extra data in the model. Required.

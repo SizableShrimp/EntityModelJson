@@ -10,7 +10,7 @@ For resources on how to declare and use JSON entity models, please see the follo
 * [All vanilla entity models exported as JSON](vanilla_layers) - This resource allows you to see how all vanilla entity models look in a JSON format.
 They can be used as a starting skeleton, or directly copied to override vanilla entity models with a custom variant.
 * [An example Forge mod using JSON entity models](https://github.com/SizableShrimp/EntityModelJsonExample)
-* [The complete JSON spec](docs/SPEC.json) - This JSON file documents all the properties you can possibly use.
+* [The complete JSON spec](docs/SPEC.json5) - This JSON file documents all the properties you can possibly use.
 
 ## Declaring a mod dependency
 To add this mod as a dependency, first add this to your repositories block:
