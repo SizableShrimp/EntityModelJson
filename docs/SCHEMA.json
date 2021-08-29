@@ -1,0 +1,216 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Minecraft Entity Model",
+  "description": "Holds all the data to define an entity model displayed on the Minecraft client",
+  "type": "object",
+  "definitions": {
+    "cubeDeformation": {
+      "type": [
+        "number",
+        "object"
+      ],
+      "properties": {
+        "growX": {
+          "title": "Grow X axis",
+          "description": "Grows the X axis by the defined value at both edges",
+          "type": "number"
+        },
+        "growY": {
+          "title": "Grow Y axis",
+          "description": "Grows the Y axis by the defined value at both edges",
+          "type": "number"
+        },
+        "growZ": {
+          "title": "Grow Z axis",
+          "description": "Grows the Z axis by the defined value at both edges",
+          "type": "number"
+        }
+      }
+    },
+    "partDefinitionChildren": {
+      "name": "Children Part Definitions",
+      "description": "Holds a map of child names to their part definitions. Coordinates resolved in children part definitions are relative to the origin of this part definition.",
+      "type": "object",
+      "patternProperties": {
+        "^.+$": {
+          "name": "Child Part Definition",
+          "description": "A child part definition. Coordinates resolved in this part definition are relative to the origin of the parent part definition.",
+          "type": "object",
+          "properties": {
+            "children": {
+              "$ref": "#/definitions/partDefinitionChildren"
+            },
+            "cubes": {
+              "name": "Cube Definitions",
+              "description": "Holds the list of cube definitions for this part definition",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "texCoord": {
+                    "name": "Texture Coordinates",
+                    "description": "Holds the UV pair mapping of where this cube's texture is defined",
+                    "type": "object",
+                    "properties": {
+                      "u": {
+                        "type": "number"
+                      },
+                      "v": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "u",
+                      "v"
+                    ]
+                  },
+                  "mirror": {
+                    "name": "Mirror Cube",
+                    "description": "Mirrors the UV mapping texture on the X axis. For example, used in vanilla to mirror the left leg/arm using the same UV mapping texture as the right leg/arm. Defaults to false.",
+                    "type": "boolean"
+                  },
+                  "comment": {
+                    "name": "Cube Comment",
+                    "description": "Helpful to document what each cube actually is, like \"ear\" or \"nose\", but does nothing on its own",
+                    "type": "string"
+                  },
+                  "origin": {
+                    "name": "Point Origin",
+                    "description": "Determines the origin point of this cube relative to the parent part definition.",
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "dimensions": {
+                    "name": "Cube Dimensions",
+                    "description": "Determines the dimensions of the cube on the X, Y, and Z axes, respectively. This value is also used to determine the dimensions of the UV mapping on the texture.",
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "grow": {
+                    "allOf": [
+                      {
+                        "$ref": "#/definitions/cubeDeformation"
+                      }
+                    ],
+                    "title": "Cube Growth",
+                    "description": "The growth of the cube, also called a cube deformation, can be used to scale this cube. Each grow value is applied by expanding the supplied axis in both directions by the amount specified. If a single number is provided, that value is applied to all 3 axes."
+                  }
+                },
+                "required": [
+                  "texCoord",
+                  "origin",
+                  "dimensions"
+                ]
+              }
+            },
+            "partPose": {
+              "name": "Part Pose",
+              "description": "The part pose determines the offset and rotation of this part definition relative to the origin of the parent part definition. All values default to 0.",
+              "type": "object",
+              "properties": {
+                "x": {
+                  "name": "X",
+                  "description": "Offsets this part definition by the amount specified on the X axis, relative to the origin of the parent part definition.",
+                  "type": "number"
+                },
+                "y": {
+                  "name": "Y",
+                  "description": "Offsets this part definition by the amount specified on the Y axis, relative to the origin of the parent part definition.",
+                  "type": "number"
+                },
+                "z": {
+                  "name": "Z",
+                  "description": "Offsets this part definition by the amount specified on the Z axis, relative to the origin of the parent part definition.",
+                  "type": "number"
+                },
+                "xRot": {
+                  "name": "X Rotation",
+                  "description": "Rotates this part definition by the amount specified, in radians, on the X axis, relative to the origin of the parent part definition.",
+                  "type": "number"
+                },
+                "yRot": {
+                  "name": "Y Rotation",
+                  "description": "Rotates this part definition by the amount specified, in radians, on the Y axis, relative to the origin of the parent part definition.",
+                  "type": "number"
+                },
+                "zRot": {
+                  "name": "Z Rotation",
+                  "description": "Rotates this part definition by the amount specified, in radians, on the Z axis, relative to the origin of the parent part definition.",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "mesh": {
+      "title": "Mesh Definition",
+      "description": "The definition of cube and children data",
+      "type": "object",
+      "properties": {
+        "overwrite": {
+          "description": "Determines whether a model defined in code with the same model layer location will be entirely overwritten by this model. This value does nothing if there is no model to overwrite. If set to false and another model with the same name exists, that model will be merged with this one. Merging happens by joining the children of both mesh definitions together. Children defined in this model override any other. Defaults to true.",
+          "type": "boolean",
+          "default": true
+        },
+        "parent": {
+          "title": "Parent Model Layer Location",
+          "description": "A parent model is used to define shared children between many models. A parent model's children map, if it exists, will be merged into this model's children. Merging happens by joining the children of both mesh definitions together. Children defined in this model override any other.",
+          "type": "string",
+          "pattern": "([a-z0-9_.-]+:)?[a-z0-9_.-]+#[a-z0-9_.-]+"
+        },
+        "universalCubeDeformation": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/cubeDeformation"
+            }
+          ],
+          "title": "Universal Cube Deformation",
+          "description": "The universal cube deformation can be used to scale an entire model. Each growth value is applied by expanding the supplied axis in both directions by the amount specified. If a single number is provided, that value is applied to all 3 axes."
+        },
+        "root": {
+          "title": "Root Part Definition",
+          "description": "The root node for all children part definitions stored in this model. \"partPose\" and \"cubes\" cannot be defined for the root part definition.",
+          "type": "object",
+          "properties": {
+            "children": {
+              "$ref": "#/definitions/partDefinitionChildren"
+            }
+          }
+        }
+      }
+    },
+    "material": {
+      "title": "Material Definition",
+      "description": "Defines the texture dimensions",
+      "type": "object",
+      "properties": {
+        "xTexSize": {
+          "title": "Texture Width",
+          "description": "Defines the width of the texture in pixels. This should match the width of the texture image used to render this model.",
+          "type": "number"
+        },
+        "yTexSize": {
+          "title": "Texture Height",
+          "description": "Defines the height of the texture in pixels. This should match the height of the texture image used to render this model.",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "required": [
+    "mesh"
+  ]
+}

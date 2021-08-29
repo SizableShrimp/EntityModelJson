@@ -11,6 +11,7 @@ For resources on how to declare and use JSON entity models, please see the follo
 They can be used as a starting skeleton, or directly copied to override vanilla entity models with a custom variant.
 * [An example Forge mod using JSON entity models](https://github.com/SizableShrimp/EntityModelJsonExample)
 * [The complete JSON spec](docs/SPEC.json5) - This JSON file documents all the properties you can possibly use.
+* [The complete JSON schema](docs/SCHEMA.json) - This has the complete JSON Schema of entity models. You can use this for hints in your editor of choice when making a JSON entity model.
 
 ## Declaring a mod dependency
 To add this mod as a dependency, first add this to your repositories block:

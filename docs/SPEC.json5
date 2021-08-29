@@ -61,6 +61,11 @@
                 "v": 0
               },
 
+              // Mirrors the UV mapping texture on the X axis.
+              // For example, used in vanilla to mirror the left leg/arm using the same UV mapping texture as the right leg/arm.
+              // Optional. Defaults to false.
+              "mirror": false,
+
               // The comment and can be helpful to document what each model cube is, but it does nothing on its own. Optional.
               "comment": "main",
 
@@ -84,10 +89,16 @@
             }
           ],
 
-          //
+          // The part pose determines the offset and rotation of this part definition relative to the origin of the parent part definition.
+          // All values default to 0.
+          // Optional.
           "partPose": {
-            "y": 15.0,
-            "z": -9.0
+            "x": 10.2, // Offsets this part definition by the amount specified on the X axis, relative to the origin of the parent part definition. Optional.
+            "y": 15.0, // Offsets this part definition by the amount specified on the Y axis, relative to the origin of the parent part definition. Optional.
+            "z": -9.0, // Offsets this part definition by the amount specified on the Z axis, relative to the origin of the parent part definition. Optional.
+            "xRot": 0, // Rotates this part definition by the amount specified, in radians, on the X axis, relative to the origin of the parent part definition. Optional.
+            "yRot": 0, // Rotates this part definition by the amount specified, in radians, on the Y axis, relative to the origin of the parent part definition. Optional.
+            "zRot": 0  // Rotates this part definition by the amount specified, in radians, on the Z axis, relative to the origin of the parent part definition. Optional.
           }
         }
       }
