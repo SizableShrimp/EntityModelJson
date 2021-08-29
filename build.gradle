@@ -218,12 +218,15 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            groupId mod_base_package
+            artifactId mod_id
             artifact jar
         }
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/mcmodsrepo"
+            def repo = project.findProperty('mavenRepo') ?: "${project.projectDir}/mcmodsrepo"
+            url "file://$repo"
         }
     }
 }

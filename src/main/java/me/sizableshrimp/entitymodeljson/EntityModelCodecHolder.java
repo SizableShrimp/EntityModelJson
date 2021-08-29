@@ -145,6 +145,11 @@ public class EntityModelCodecHolder {
 
     private static MeshDefinition createMeshDefinition(Optional<ModelLayerLocation> parentOptional, Optional<CubeDeformation> universalCubeDeformation, boolean overwrite,
             Optional<PartDefinition> rootOpt) {
+        rootOpt.ifPresent(root -> {
+            // Ensure no cubes or a part pose can be defined for the root node.
+            root.cubes = List.of();
+            root.partPose = PartPose.ZERO;
+        });
         return new ParentedMeshDefinition(parentOptional.orElse(null), universalCubeDeformation.orElse(null), rootOpt.orElse(null), overwrite);
     }
 

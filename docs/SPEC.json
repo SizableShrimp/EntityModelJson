@@ -1,0 +1,96 @@
+// This JSON file holds the complete specification for JSON-defined entity models.
+// Note that this should be used as a reference, and not copied directly. Comments are not allowed in the final JSON file.
+{
+  // The mesh definition holds all children, cubes, and extra data in the model. Required.
+  "mesh": {
+    // Overwrite is a true/false boolean used to determine whether to overwrite a model of the same name that is defined in code.
+    // Its value does not affect anything if there is no model to overwrite.
+    // If set to false and another model with the same name exists, that model will be merged with this one.
+    // Merging happens by joining the children of both models together. Children defined in this model override any other.
+    // If set to true, any model will be overwritten entirely with this one.
+    // Optional. Defaults to true.
+    "overwrite": true,
+
+    // A parent model is useful to define shared children between models.
+    // A parent model's children map, if it exists, will be merged into this model's children.
+    // Merging happens by joining the children of both models together. Children defined in this model override any other.
+    // Optional.
+    "parent": "minecraft:cat#main",
+
+    // The universal cube deformation can be used to scale an entire model.
+    // By default, all grow values start at 0.
+    // Each grow value is applied by expanding the supplied axis in both directions by the amount specified.
+    // Optional.
+    "universalCubeDeformation": {
+      "growX": 2.5, // Grows the X axis by the defined value at both edges. Optional.
+      "growY": 3.0, // Grows the Y axis by the defined value at both edges. Optional.
+      "growZ": 4.5  // Grows the Z axis by the defined value at both edges. Optional.
+    },
+    // A cube deformation which should be applied with the same value for all 3 axes can also be defined with one number.
+    // This grows the X, Y, and Z axes all by the value 5 on all sides.
+    // "universalCubeDeformation": 5,
+
+    // The root definition holds the children and cube data defined in the model.
+    // Optional, although in almost all cases you will want to have this.
+    "root": {
+
+      // The children map of name to part definition. Optional.
+      "children": {
+
+        // This declares a child with the name "head".
+        // You should name your child parts something sensible, as the same name has to appear in code.
+        "head": {
+
+          // The children of this child part.
+          // Each child part can have its own children, as many sub children as you want.
+          // Each sub child is affected by the part pose (offset and rotation) of its parent.
+          // Optional.
+          "children": {},
+
+          // The list of cubes for the child part. You can have as many cubes as you want.
+          // Each one is a square with a defined size, position, and growth factor.
+          // Optional.
+          "cubes": [
+            {
+              // The UV texture coordinates.
+              // U - x (left to right) coordinate on the texture.
+              // V - y (up to down) coordinate on the texture.
+              // Required.
+              "texCoord": {
+                "u": 0,
+                "v": 0
+              },
+
+              // The comment and can be helpful to document what each model cube is, but it does nothing on its own. Optional.
+              "comment": "main",
+
+              // The origin specifies what coordinates to place this cube at. Required.
+              "origin": [
+                -3.5,
+                -3.0,
+                -4.0
+              ],
+
+              // The dimensions specify the length of the cube on each axis in order of X, Y, Z. Required.
+              "dimensions": [
+                5.0,
+                4.0,
+                5.0
+              ],
+
+              // "grow" is a cube deformation, it works the same as "universalCubeDeformation" but for only this cube.
+              // Optional, defaults to no growth.
+              "grow": 0.01
+            }
+          ],
+
+          //
+          "partPose": {
+            "y": 15.0,
+            "z": -9.0
+          }
+        }
+      }
+    }
+  }
+}
