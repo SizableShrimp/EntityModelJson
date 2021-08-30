@@ -135,7 +135,7 @@ public class EntityModelCodecHolder {
     }
 
     private static PartDefinition createPartDefinition(List<CubeDefinition> cubes, Optional<PartPose> partPose, Optional<Map<String, PartDefinition>> children) {
-        PartDefinition partDefinition = new PartDefinition(cubes, partPose.orElse(PartPose.ZERO));
+        PartDefinition partDefinition = new SafePartDefinition(cubes, partPose.orElse(PartPose.ZERO));
         children.filter(c -> !c.isEmpty()).ifPresent(c -> {
             partDefinition.children.clear();
             partDefinition.children.putAll(c);
