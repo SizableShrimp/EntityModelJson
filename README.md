@@ -23,10 +23,10 @@ repositories {
     }
 }
 ```
-Then, add the dependency to your dependencies block:
+Then, add the dependency to your dependencies block. For the latest version, see [here](https://github.com/SizableShrimp/EntityModelJson/releases).
 ```groovy
 dependencies {
-    implementation fg.deobf("me.sizableshrimp:entitymodeljson:${minecraft_version}-1.0.0")
+    implementation fg.deobf("me.sizableshrimp:entitymodeljson:${minecraft_version}-${entitymodeljson_version}")
 }
 ```
 For a complete example, see [here](https://github.com/SizableShrimp/EntityModelJsonExample/blob/1.17.x/build.gradle).

@@ -90,9 +90,15 @@ public class EntityModelCodecHolder {
                     .forGetter(partDef -> Optional.of(partDef.children).filter(c -> !c.isEmpty()))
     ).apply(instance, EntityModelCodecHolder::createPartDefinition));
     public static final Codec<MeshDefinition> MESH_DEFINITION_CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            MODEL_LAYER_LOCATION_CODEC.optionalFieldOf("parent").forGetter(meshDef -> Optional.empty()),
-            CUBE_DEFORMATION_CODEC.optionalFieldOf("universalCubeDeformation").forGetter(meshDef -> Optional.empty()),
-            Codec.BOOL.optionalFieldOf("overwrite", true).forGetter(meshDef -> !(meshDef instanceof ParentedMeshDefinition parentedMeshDef) || parentedMeshDef.isOverwrite()),
+            MODEL_LAYER_LOCATION_CODEC.optionalFieldOf("parent").forGetter(meshDef ->
+                    Optional.ofNullable(meshDef instanceof ParentedMeshDefinition parented && !parented.hasCalculatedInheritance()
+                            ? parented.getParent()
+                            : null)),
+            CUBE_DEFORMATION_CODEC.optionalFieldOf("universalCubeDeformation").forGetter(meshDef ->
+                    Optional.ofNullable(meshDef instanceof ParentedMeshDefinition parented && !parented.hasCalculatedInheritance()
+                            ? parented.getUniversalCubeDeformation()
+                            : null)),
+            Codec.BOOL.optionalFieldOf("overwrite", true).forGetter(meshDef -> !(meshDef instanceof ParentedMeshDefinition parented) || parented.isOverwrite()),
             PART_DEFINITION_CODEC.optionalFieldOf("root").forGetter(meshDef -> Optional.of(meshDef.getRoot()))
     ).apply(instance, EntityModelCodecHolder::createMeshDefinition));
 
@@ -103,15 +109,15 @@ public class EntityModelCodecHolder {
                     : layerDef.material))
     ).apply(instance, InheritingLayerDefinition::new));
 
-    private static DataResult<ModelLayerLocation> readModelLayerLocation(String layerLocation) {
+    public static DataResult<ModelLayerLocation> readModelLayerLocation(String layerLocation) {
         int idx = layerLocation.indexOf('#');
         String layer = idx == -1 ? "" : layerLocation.substring(idx + 1);
         if (idx == -1 || layer.isEmpty())
-            return getLayerLocationParseError(layerLocation, "missing layer");
+            return getLayerLocationParseError(layerLocation, "missing layer (part after hashtag)");
 
         String model = layerLocation.substring(0, idx);
         if (model.isEmpty())
-            return getLayerLocationParseError(layerLocation, "missing model");
+            return getLayerLocationParseError(layerLocation, "missing model (part before hashtag)");
 
         try {
             return DataResult.success(new ModelLayerLocation(new ResourceLocation(model), layer));

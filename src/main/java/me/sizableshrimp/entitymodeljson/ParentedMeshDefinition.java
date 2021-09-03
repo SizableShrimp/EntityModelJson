@@ -39,6 +39,7 @@ public class ParentedMeshDefinition extends MeshDefinition {
     private ModelLayerLocation parent;
     private CubeDeformation universalCubeDeformation;
     private boolean overwrite;
+    private boolean calculatedInheritance;
 
     public ParentedMeshDefinition() {
         this(null, null, null, true);
@@ -65,6 +66,10 @@ public class ParentedMeshDefinition extends MeshDefinition {
         return parent;
     }
 
+    public void setParent(@Nullable ModelLayerLocation parent) {
+        this.parent = parent;
+    }
+
     /**
      * The universal cube deformation is additively applied to all children of the root part definition
      * when {@link #calculateInheritance(ModelLayerLocation, Map, Map) calculating inheritance}
@@ -74,6 +79,10 @@ public class ParentedMeshDefinition extends MeshDefinition {
         return universalCubeDeformation;
     }
 
+    public void setUniversalCubeDeformation(@Nullable CubeDeformation universalCubeDeformation) {
+        this.universalCubeDeformation = universalCubeDeformation;
+    }
+
     /**
      * If true, overwrites any existing mesh definitions of the same model layer location with this one.
      * f false, merges this one and any existing mesh definitions of the same model layer location.
@@ -81,6 +90,17 @@ public class ParentedMeshDefinition extends MeshDefinition {
      */
     public boolean isOverwrite() {
         return overwrite;
+    }
+
+    public void setOverwrite(boolean overwrite) {
+        this.overwrite = overwrite;
+    }
+
+    /**
+     * True if {@link #calculateInheritance(ModelLayerLocation, Map, Map)} has already been called for this instance, false otherwise.
+     */
+    public boolean hasCalculatedInheritance() {
+        return calculatedInheritance;
     }
 
     /**
@@ -95,6 +115,7 @@ public class ParentedMeshDefinition extends MeshDefinition {
      * @param roots The map of model layer locations to layer definition roots, used to find parents
      */
     public void calculateInheritance(ModelLayerLocation location, @Nullable Map<ModelLayerLocation, LayerDefinition> codeRoots, Map<ModelLayerLocation, LayerDefinition> roots) {
+        this.calculatedInheritance = true;
         if (!this.isOverwrite())
             inheritChildren(getPartDefinition(codeRoots, location));
 

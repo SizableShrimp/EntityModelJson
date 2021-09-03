@@ -195,6 +195,10 @@ processResources {
     }
 }
 
+java {
+    withSourcesJar()
+}
+
 jar {
     manifest {
         attributes([
@@ -221,6 +225,7 @@ publishing {
             groupId mod_base_package
             artifactId mod_id
             artifact jar
+            artifact sourcesJar
         }
     }
     repositories {
