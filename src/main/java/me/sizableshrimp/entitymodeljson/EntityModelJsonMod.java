@@ -30,10 +30,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
-import net.minecraft.server.packs.resources.SimpleReloadableResourceManager;
+import net.minecraft.server.packs.resources.ReloadableResourceManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.IExtensionPoint;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -51,12 +53,15 @@ public class EntityModelJsonMod {
     public static final Logger LOGGER = LogManager.getLogger();
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public EntityModelJsonMod() {}
+    public EntityModelJsonMod() {
+        ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class,
+                () -> new IExtensionPoint.DisplayTest(() -> "anything", (remoteVersion, networkBool) -> networkBool));
+    }
 
     @SubscribeEvent
     public static void onRegisterClientReloadListeners(RegisterClientReloadListenersEvent event) {
         Minecraft mc = Minecraft.getInstance();
-        List<PreparableReloadListener> listeners = ((SimpleReloadableResourceManager) mc.getResourceManager()).listeners;
+        List<PreparableReloadListener> listeners = ((ReloadableResourceManager) mc.getResourceManager()).listeners;
         int idx = listeners.indexOf(mc.getEntityModels());
         // We need to place this reload listener right after entity model sets,
         // so that the layer definitions will exist by the time entity renderers bake them

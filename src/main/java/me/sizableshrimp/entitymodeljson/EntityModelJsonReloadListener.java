@@ -58,6 +58,9 @@ public class EntityModelJsonReloadListener extends SimpleJsonResourceReloadListe
         var codeRoots = entityModels.roots;
         var roots = new HashMap<>(codeRoots);
 
+        // Export vanilla model roots
+        // VanillaLayerExporter.export(path);
+
         for (var entry : object.entrySet()) {
             ModelLayerLocation layerLocation = mapPathToModelLayerLoc(entry.getKey());
             if (layerLocation == null)
