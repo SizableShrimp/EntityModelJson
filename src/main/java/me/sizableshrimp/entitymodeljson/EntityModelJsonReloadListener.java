@@ -50,7 +50,7 @@ public class EntityModelJsonReloadListener extends SimpleJsonResourceReloadListe
     }
 
     @Override
-    protected void apply(Map<ResourceLocation, JsonElement> object, ResourceManager resourceManager, ProfilerFiller profiler) {
+    protected void apply(Map<ResourceLocation, JsonElement> entityModelJsons, ResourceManager resourceManager, ProfilerFiller profiler) {
         Map<ModelLayerLocation, LayerDefinition> jsonRoots = new HashMap<>();
 
         // Get the entity model roots here
@@ -61,7 +61,7 @@ public class EntityModelJsonReloadListener extends SimpleJsonResourceReloadListe
         // Export vanilla model roots
         // VanillaLayerExporter.export(path);
 
-        for (var entry : object.entrySet()) {
+        for (var entry : entityModelJsons.entrySet()) {
             ModelLayerLocation layerLocation = mapPathToModelLayerLoc(entry.getKey());
             if (layerLocation == null)
                 continue;
