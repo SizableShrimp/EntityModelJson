@@ -106,7 +106,8 @@
         onDeactivation() {
             CODEC.export_action.delete();
         }
-    })
+    });
+    CODEC.format = FORMAT;
 
     Plugin.register("javaentitymodeljson_models", {
         title: "Java Entity Model JSON Support",
