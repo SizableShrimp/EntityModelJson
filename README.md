@@ -20,6 +20,21 @@ Notable places to check out are:
   * [Entity animal entity model JSON file](src/test/resources/assets/entitymodeljsonexample/models/entity/main/example_animal.json) - Contains the armor stand entity model defined in JSON
   * [Entity Model Json dependency in mods.toml](src/test/resources/META-INF/mods.toml#L51-L57) - Demonstrates how to declare a required clientside dependency on the Entity Model JSON mod
 
+## Creating/Editing Models in Blockbench
+Entity Model JSON ships a Blockbench plugin which you can install for exporting and importing of files in the format of Entity Model JSON.
+1. Download the [javaentitymodeljson_models.js](https://raw.githubusercontent.com/SizableShrimp/EntityModelJson/1.18.x/javaentitymodeljson_models.js) file (Ctrl+S on most browsers).
+Make sure the file is saved with the same name!
+You should move this file to a place where you know it won't get deleted, as it will be loaded every time Blockbench starts.
+2. Open up Blockbench, and go to `File > Plugins` in the top-left of the window.
+Click on the ![local plugin install icon](https://i.imgur.com/5On6KwX.png) icon labeled `Load Plugin from File`.
+3. Select the `javaentitymodeljson_models.js` you saved previously.
+
+You can use `File > New > Java Entity Model JSON` to create new Entity Model JSON files.
+Using `File > Open Model` (Ctrl+O) and selecting an Entity Model JSON file will also import it (without textures) into Blockbench.
+
+To convert existing models to the Entity Model JSON format, go to `File > Convert Project` and select `Java Entity Model JSON`.
+To export Entity Model JSON files from Blockbench, navigate to `File > Export > Export Java Entity Model JSON`.
+
 ## Declaring a mod dependency
 To add this mod as a dependency, first add this to your repositories block:
 ```groovy
