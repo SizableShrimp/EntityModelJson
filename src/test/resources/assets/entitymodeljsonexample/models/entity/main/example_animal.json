@@ -1,5 +1,5 @@
 {
-  "__comment": "The default armor stand model, see https://github.com/SizableShrimp/EntityModelJson/blob/1.17.x/vanilla_layers/main/armor_stand.json",
+  "__comment": "The default armor stand model, see vanilla_layers/main/armor_stand.json",
   "mesh": {
     "root": {
       "children": {
