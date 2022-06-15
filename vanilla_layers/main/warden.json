@@ -1,0 +1,266 @@
+{
+  "mesh": {
+    "root": {
+      "children": {
+        "bone": {
+          "partPose": {
+            "y": 24.0
+          },
+          "children": {
+            "left_leg": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 76.0,
+                    "v": 76.0
+                  },
+                  "origin": [
+                    -2.9,
+                    0.0,
+                    -3.0
+                  ],
+                  "dimensions": [
+                    6.0,
+                    13.0,
+                    6.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": 5.9,
+                "y": -13.0
+              }
+            },
+            "right_leg": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 76.0,
+                    "v": 48.0
+                  },
+                  "origin": [
+                    -3.1,
+                    0.0,
+                    -3.0
+                  ],
+                  "dimensions": [
+                    6.0,
+                    13.0,
+                    6.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "x": -5.9,
+                "y": -13.0
+              }
+            },
+            "body": {
+              "cubes": [
+                {
+                  "texCoord": {
+                    "u": 0.0,
+                    "v": 0.0
+                  },
+                  "origin": [
+                    -9.0,
+                    -13.0,
+                    -4.0
+                  ],
+                  "dimensions": [
+                    18.0,
+                    21.0,
+                    11.0
+                  ]
+                }
+              ],
+              "partPose": {
+                "y": -21.0
+              },
+              "children": {
+                "head": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 0.0,
+                        "v": 32.0
+                      },
+                      "origin": [
+                        -8.0,
+                        -16.0,
+                        -5.0
+                      ],
+                      "dimensions": [
+                        16.0,
+                        16.0,
+                        10.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "y": -13.0
+                  },
+                  "children": {
+                    "right_tendril": {
+                      "cubes": [
+                        {
+                          "texCoord": {
+                            "u": 52.0,
+                            "v": 32.0
+                          },
+                          "origin": [
+                            -16.0,
+                            -13.0,
+                            0.0
+                          ],
+                          "dimensions": [
+                            16.0,
+                            16.0,
+                            0.0
+                          ]
+                        }
+                      ],
+                      "partPose": {
+                        "x": -8.0,
+                        "y": -12.0
+                      }
+                    },
+                    "left_tendril": {
+                      "cubes": [
+                        {
+                          "texCoord": {
+                            "u": 58.0,
+                            "v": 0.0
+                          },
+                          "origin": [
+                            0.0,
+                            -13.0,
+                            0.0
+                          ],
+                          "dimensions": [
+                            16.0,
+                            16.0,
+                            0.0
+                          ]
+                        }
+                      ],
+                      "partPose": {
+                        "x": 8.0,
+                        "y": -12.0
+                      }
+                    }
+                  }
+                },
+                "right_arm": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 44.0,
+                        "v": 50.0
+                      },
+                      "origin": [
+                        -4.0,
+                        0.0,
+                        -4.0
+                      ],
+                      "dimensions": [
+                        8.0,
+                        28.0,
+                        8.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "x": -13.0,
+                    "y": -13.0,
+                    "z": 1.0
+                  }
+                },
+                "left_arm": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 0.0,
+                        "v": 58.0
+                      },
+                      "origin": [
+                        -4.0,
+                        0.0,
+                        -4.0
+                      ],
+                      "dimensions": [
+                        8.0,
+                        28.0,
+                        8.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "x": 13.0,
+                    "y": -13.0,
+                    "z": 1.0
+                  }
+                },
+                "left_ribcage": {
+                  "cubes": [
+                    {
+                      "mirror": true,
+                      "texCoord": {
+                        "u": 90.0,
+                        "v": 11.0
+                      },
+                      "origin": [
+                        -7.0,
+                        -11.0,
+                        -0.1
+                      ],
+                      "dimensions": [
+                        9.0,
+                        21.0,
+                        0.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "x": 7.0,
+                    "y": -2.0,
+                    "z": -4.0
+                  }
+                },
+                "right_ribcage": {
+                  "cubes": [
+                    {
+                      "texCoord": {
+                        "u": 90.0,
+                        "v": 11.0
+                      },
+                      "origin": [
+                        -2.0,
+                        -11.0,
+                        -0.1
+                      ],
+                      "dimensions": [
+                        9.0,
+                        21.0,
+                        0.0
+                      ]
+                    }
+                  ],
+                  "partPose": {
+                    "x": -7.0,
+                    "y": -2.0,
+                    "z": -4.0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "material": {
+    "xTexSize": 128,
+    "yTexSize": 128
+  }
+}

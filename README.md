@@ -1,6 +1,7 @@
 # Entity Model JSON
 This is a Minecraft mod for Forge which allows declaring entity models in JSON.
 It can be used to create powerful entity models both in mods and modpacks.
+**This is a 100% clientside only mod. Adding it to a server will do nothing.**
 
 For mods, entity models can be declared in JSON and shipped as assets in the final jar, with a required dependency on this mod.
 For modpack makers, vanilla and modded entity models can be overriden in JSON using this system.
@@ -22,7 +23,7 @@ Notable places to check out are:
 
 ## Creating/Editing Models in Blockbench
 Entity Model JSON ships a Blockbench plugin which you can install for exporting and importing of files in the format of Entity Model JSON.
-1. Download the [javaentitymodeljson_models.js](https://raw.githubusercontent.com/SizableShrimp/EntityModelJson/1.18.x/javaentitymodeljson_models.js) file (Ctrl+S on most browsers).
+1. Download the [javaentitymodeljson_models.js](https://raw.githubusercontent.com/SizableShrimp/EntityModelJson/1.19.x/javaentitymodeljson_models.js) file (Ctrl+S on most browsers).
 Make sure the file is saved with the same name!
 You should move this file to a place where you know it won't get deleted, as it will be loaded every time Blockbench starts.
 2. Open up Blockbench, and go to `File > Plugins` in the top-left of the window.
@@ -34,6 +35,11 @@ Using `File > Open Model` (Ctrl+O) and selecting an Entity Model JSON file will 
 
 To convert existing models to the Entity Model JSON format, go to `File > Convert Project` and select `Java Entity Model JSON`.
 To export Entity Model JSON files from Blockbench, navigate to `File > Export > Export Java Entity Model JSON`.
+
+## Dumping vanilla & modded layer definitions
+Entity Model Json supports dumping existing layer definitions in code to JSON.
+These files will export to your running game directory in a folder named `layerexports`!
+See `/emj dump` or `/entitymodeljson dump` in game for more information.
 
 ## Declaring a mod dependency
 To add this mod as a dependency, first add this to your repositories block:

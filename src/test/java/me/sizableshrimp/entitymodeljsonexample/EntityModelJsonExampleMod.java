@@ -68,9 +68,8 @@ public class EntityModelJsonExampleMod {
     public void onGatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        if (event.includeClient()) {
-            generator.addProvider(new ExampleEntityModelProvider(generator, existingFileHelper));
-        }
+
+        generator.addProvider(event.includeClient(), new ExampleEntityModelProvider(generator, existingFileHelper));
     }
 
     private static <T extends Entity> RegistryObject<EntityType<T>> registerEntity(String name, Supplier<EntityType.Builder<T>> supplier) {

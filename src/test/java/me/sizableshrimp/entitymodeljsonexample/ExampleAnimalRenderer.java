@@ -34,9 +34,9 @@ public class ExampleAnimalRenderer extends MobRenderer<ExampleAnimal, EntityMode
     // The layer, in this case "main", becomes the root folder for the entity model
     // All JSON entity models reside in assets/modid/models/entity.
     // This model location translates to assets/entitymodeljsonexample/models/entity/main/example_animal.json
-    public static final ModelLayerLocation EXAMPLE_ANIMAL_MODEL_LOCATION = new ModelLayerLocation(new ResourceLocation(EntityModelJsonExampleMod.MODID, "example_animal"), "main");
+    public static final ModelLayerLocation EXAMPLE_ANIMAL_MODEL_LOCATION = new ModelLayerLocation(new ResourceLocation(EntityModelJsonExampleMod.MODID, "allay"), "main");
     // The actual texture PNG
-    public static final ResourceLocation SQUID_LOCATION = new ResourceLocation("textures/entity/armorstand/wood.png");
+    public static final ResourceLocation SQUID_LOCATION = new ResourceLocation(EntityModelJsonExampleMod.MODID, "textures/entity/allay.png");
 
     public ExampleAnimalRenderer(EntityRendererProvider.Context context) {
         // Bake the model location, this will get a ModelPart with the data defined in the custom JSON file

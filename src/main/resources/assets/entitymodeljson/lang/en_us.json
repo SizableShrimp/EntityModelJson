@@ -1,0 +1,7 @@
+{
+  "argument.model_layer_location.missing_layer": "Missing layer in model layer location",
+  "argument.model_layer_location.missing_model": "Missing model in model layer location",
+  "command.entitymodeljson.dump.all.success": "Dumped %s layers to %s.",
+  "command.entitymodeljson.dump.one.success": "Dumped layer %s to %s.",
+  "command.entitymodeljson.dump.one.missing": "Could not find layer %s."
+}

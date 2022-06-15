@@ -22,19 +22,17 @@
 
 package me.sizableshrimp.entitymodeljson.datagen;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import me.sizableshrimp.entitymodeljson.EntityModelCodecHolder;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
-import net.minecraft.data.HashCache;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -45,7 +43,6 @@ import java.util.Map;
  */
 public abstract class EntityModelProvider implements DataProvider {
     protected static final ExistingFileHelper.ResourceType MODEL = new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".json", "models");
-    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
     public static final String ENTITY_FOLDER = "entity";
 
     protected final DataGenerator generator;
@@ -66,7 +63,7 @@ public abstract class EntityModelProvider implements DataProvider {
     public abstract void registerEntityModels();
 
     @Override
-    public void run(HashCache cache) {
+    public void run(CachedOutput cache) {
         clear();
         registerEntityModels();
         generateAll(cache);
@@ -223,11 +220,11 @@ public abstract class EntityModelProvider implements DataProvider {
      *
      * @param cache The hash cache used for up-to-date checking
      */
-    protected void generateAll(HashCache cache) {
+    protected void generateAll(CachedOutput cache) {
         for (EntityModelBuilder model : generatedModels.values()) {
             Path target = getPath(model);
             try {
-                DataProvider.save(GSON, cache, model.toJson(), target);
+                DataProvider.saveStable(cache, model.toJson(), target);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

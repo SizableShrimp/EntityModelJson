@@ -79,6 +79,7 @@
         "left_middle_front_leg": {
           "cubes": [
             {
+              "mirror": true,
               "texCoord": {
                 "u": 18.0,
                 "v": 0.0
@@ -150,6 +151,7 @@
         "left_hind_leg": {
           "cubes": [
             {
+              "mirror": true,
               "texCoord": {
                 "u": 18.0,
                 "v": 0.0
@@ -224,6 +226,7 @@
         "left_middle_hind_leg": {
           "cubes": [
             {
+              "mirror": true,
               "texCoord": {
                 "u": 18.0,
                 "v": 0.0
@@ -249,6 +252,7 @@
         "left_front_leg": {
           "cubes": [
             {
+              "mirror": true,
               "texCoord": {
                 "u": 18.0,
                 "v": 0.0

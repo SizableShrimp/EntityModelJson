@@ -33,9 +33,9 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MaterialDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ModelFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -75,7 +75,7 @@ public class EntityModelBuilder extends ModelFile {
      * @see #parent(ModelLayerLocation)
      * @see #parent(ModelFile)
      */
-    public EntityModelBuilder parent(@Nonnull String parent) {
+    public EntityModelBuilder parent(@NotNull String parent) {
         return parent(readLayerLocOrThrow(parent, true));
     }
 
@@ -103,7 +103,7 @@ public class EntityModelBuilder extends ModelFile {
      * @see #parent(String)
      * @see #parent(ModelLayerLocation)
      */
-    public EntityModelBuilder parent(@Nonnull ModelFile parent) {
+    public EntityModelBuilder parent(@NotNull ModelFile parent) {
         if (parent instanceof EntityModelBuilder builder) {
             mesh.setParent(builder.getLayerLocation());
         } else {
