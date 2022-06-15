@@ -263,6 +263,7 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            groupId 'me.sizableshrimp'
             artifactId mod_id
             artifact jar
             artifact sourcesJar
