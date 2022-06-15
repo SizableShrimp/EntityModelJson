@@ -47,7 +47,7 @@ To add this mod as a dependency, first add this to your repositories block:
 repositories {
     // Entity Model JSON maven
     maven {
-        url = 'https://sizableshrimp.me/maven'
+        url = 'https://maven.100media.dev'
     }
 }
 ```

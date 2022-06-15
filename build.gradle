@@ -263,7 +263,6 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId mod_base_package
             artifactId mod_id
             artifact jar
             artifact sourcesJar
@@ -271,8 +270,15 @@ publishing {
     }
     repositories {
         maven {
-            def repo = project.findProperty('mavenRepo') ?: "${project.projectDir}/mcmodsrepo"
-            url "file://$repo"
+            name = '100Media'
+            url = 'https://maven.100media.dev/' + (project.version.endsWith('-SNAPSHOT') ? 'public-snapshots' : 'public-releases')
+            credentials {
+                username = project.getProperty('hm_maven_username')
+                password = project.getProperty('hm_maven_password')
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
         }
     }
 }
