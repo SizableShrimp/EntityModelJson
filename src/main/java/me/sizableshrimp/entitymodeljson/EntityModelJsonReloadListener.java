@@ -66,7 +66,7 @@ public class EntityModelJsonReloadListener extends SimpleJsonResourceReloadListe
             if (layerLocation == null)
                 continue;
             EntityModelCodecHolder.LAYER_DEFINITION_CODEC.parse(JsonOps.INSTANCE, entry.getValue())
-                    .resultOrPartial(e -> LOGGER.error("Error while parsing entity model json: {}", e))
+                    .resultOrPartial(e -> LOGGER.warn("Error while parsing entity model json: {}", e))
                     .ifPresent(layerDef -> {
                         if (layerDef instanceof InheritingLayerDefinition inheritingLayerDef && inheritingLayerDef.getMaterial() == null) {
                             LayerDefinition oldLayerDef = roots.get(layerLocation);

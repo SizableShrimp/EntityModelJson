@@ -85,7 +85,7 @@ public class ParentedMeshDefinition extends MeshDefinition {
 
     /**
      * If true, overwrites any existing mesh definitions of the same model layer location with this one.
-     * f false, merges this one and any existing mesh definitions of the same model layer location.
+     * If false, merges this one and any existing mesh definitions of the same model layer location.
      * Defaults to true.
      */
     public boolean isOverwrite() {

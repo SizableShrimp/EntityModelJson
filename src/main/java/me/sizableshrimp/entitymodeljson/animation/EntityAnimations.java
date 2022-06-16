@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 SizableShrimp
+ * Copyright (c) 2022 SizableShrimp
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,34 +20,29 @@
  * SOFTWARE.
  */
 
-package me.sizableshrimp.entitymodeljson;
+package me.sizableshrimp.entitymodeljson.animation;
 
-import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.DataResult;
-import com.mojang.serialization.DynamicOps;
-import net.minecraftforge.common.util.Lazy;
+import net.minecraft.client.animation.AnimationDefinition;
+import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.function.Supplier;
+import java.util.Map;
+import java.util.Optional;
 
-public class LazyCodec<T> implements Codec<T> {
-    private final Supplier<Codec<T>> internal;
+public class EntityAnimations {
+    static Map<ResourceLocation, AnimationDefinition> definitions = Map.of();
 
-    private LazyCodec(Supplier<Codec<T>> internal) {
-        this.internal = Lazy.of(internal);
+    @NotNull
+    public Optional<AnimationDefinition> getDefinition(ResourceLocation id) {
+        return Optional.ofNullable(definitions.get(id));
     }
 
-    public static <T> LazyCodec<T> of(Supplier<Codec<T>> supplier) {
-        return new LazyCodec<>(supplier);
-    }
+    @NotNull
+    public AnimationDefinition getDefinitionOrThrow(ResourceLocation id) {
+        AnimationDefinition animationDefinition = definitions.get(id);
+        if (animationDefinition == null)
+            throw new IllegalArgumentException("Missing entity animation definition with id " + id);
 
-    @Override
-    public <T1> DataResult<Pair<T, T1>> decode(DynamicOps<T1> ops, T1 input) {
-        return internal.get().decode(ops, input);
-    }
-
-    @Override
-    public <T1> DataResult<T1> encode(T input, DynamicOps<T1> ops, T1 prefix) {
-        return internal.get().encode(input, ops, prefix);
+        return animationDefinition;
     }
 }

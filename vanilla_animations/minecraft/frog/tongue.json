@@ -1,0 +1,149 @@
+{
+  "lengthInSeconds": 0.5,
+  "boneAnimations": {
+    "head": [
+      {
+        "target": "minecraft:rotation",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.0833,
+            "target": [
+              -1.0471976,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.4167,
+            "target": [
+              -1.0471976,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:scale",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.017453292,
+              0.017453292,
+              0.017453292
+            ]
+          },
+          {
+            "timestamp": 0.0833,
+            "target": [
+              0.017418386,
+              0.017453292,
+              0.017453292
+            ]
+          },
+          {
+            "timestamp": 0.4167,
+            "target": [
+              0.017418386,
+              0.017453292,
+              0.017453292
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.017453292,
+              0.017453292,
+              0.017453292
+            ]
+          }
+        ]
+      }
+    ],
+    "tongue": [
+      {
+        "target": "minecraft:rotation",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.0833,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.4167,
+            "target": [
+              -0.31415927,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:scale",
+        "keyframes": [
+          {
+            "timestamp": 0.0833,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.1667,
+            "target": [
+              -0.5,
+              0.0,
+              4.0
+            ]
+          },
+          {
+            "timestamp": 0.4167,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

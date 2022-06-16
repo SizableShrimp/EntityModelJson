@@ -1,0 +1,193 @@
+{
+  "lengthInSeconds": 3.0,
+  "boneAnimations": {
+    "croaking_body": [
+      {
+        "target": "minecraft:position",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.375,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.4167,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.4583,
+            "target": [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 2.9583,
+            "target": [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 3.0,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:scale",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              -1.0,
+              -1.0,
+              -1.0
+            ]
+          },
+          {
+            "timestamp": 0.375,
+            "target": [
+              -1.0,
+              -1.0,
+              -1.0
+            ]
+          },
+          {
+            "timestamp": 0.4167,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.4583,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5417,
+            "target": [
+              0.29999995,
+              1.0999999,
+              0.6
+            ]
+          },
+          {
+            "timestamp": 0.625,
+            "target": [
+              0.29999995,
+              1.0999999,
+              0.6
+            ]
+          },
+          {
+            "timestamp": 0.7083,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 2.25,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 2.3333,
+            "target": [
+              0.29999995,
+              1.0999999,
+              0.6
+            ]
+          },
+          {
+            "timestamp": 2.4167,
+            "target": [
+              0.29999995,
+              1.0999999,
+              0.6
+            ]
+          },
+          {
+            "timestamp": 2.5,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 2.5833,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 2.6667,
+            "target": [
+              0.29999995,
+              1.0999999,
+              0.6
+            ]
+          },
+          {
+            "timestamp": 2.875,
+            "target": [
+              0.29999995,
+              1.0999999,
+              0.6
+            ]
+          },
+          {
+            "timestamp": 2.9583,
+            "target": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 3.0,
+            "target": [
+              -1.0,
+              -1.0,
+              -1.0
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

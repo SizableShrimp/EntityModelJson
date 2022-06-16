@@ -1,0 +1,225 @@
+{
+  "lengthInSeconds": 0.5,
+  "boneAnimations": {
+    "left_leg": [
+      {
+        "target": "minecraft:rotation",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.7853982,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.7853982,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:position",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    ],
+    "right_arm": [
+      {
+        "target": "minecraft:rotation",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              -0.9798278,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              -0.9798278,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:position",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    ],
+    "right_leg": [
+      {
+        "target": "minecraft:rotation",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.7853982,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.7853982,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:position",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    ],
+    "left_arm": [
+      {
+        "target": "minecraft:rotation",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              -0.9798278,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              -0.9798278,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:position",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    ],
+    "body": [
+      {
+        "target": "minecraft:rotation",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              -0.3926991,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              -0.3926991,
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      },
+      {
+        "target": "minecraft:position",
+        "keyframes": [
+          {
+            "timestamp": 0.0,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          },
+          {
+            "timestamp": 0.5,
+            "target": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

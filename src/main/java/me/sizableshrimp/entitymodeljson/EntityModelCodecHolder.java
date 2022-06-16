@@ -38,6 +38,7 @@ import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.UVPair;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.ExtraCodecs;
 
 import java.util.List;
 import java.util.Map;
@@ -86,7 +87,7 @@ public class EntityModelCodecHolder {
     public static final Codec<PartDefinition> PART_DEFINITION_CODEC = RecordCodecBuilder.create(instance -> instance.group(
             CUBE_DEFINITION_CODEC.listOf().optionalFieldOf("cubes", List.of()).forGetter(partDef -> partDef.cubes),
             PART_POSE_CODEC.optionalFieldOf("partPose").forGetter(partDef -> Optional.of(partDef.partPose).filter(p -> !partPoseEquals(p, PartPose.ZERO))),
-            Codec.unboundedMap(Codec.STRING, LazyCodec.of(EntityModelCodecHolder::getPartDefinitionCodec)).optionalFieldOf("children")
+            Codec.unboundedMap(Codec.STRING, ExtraCodecs.lazyInitializedCodec(EntityModelCodecHolder::getPartDefinitionCodec)).optionalFieldOf("children")
                     .forGetter(partDef -> Optional.of(partDef.children).filter(c -> !c.isEmpty()))
     ).apply(instance, EntityModelCodecHolder::createPartDefinition));
     public static final Codec<MeshDefinition> MESH_DEFINITION_CODEC = RecordCodecBuilder.create(instance -> instance.group(
