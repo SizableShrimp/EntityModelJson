@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 SizableShrimp
+ * Copyright (c) 2022 SizableShrimp
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,30 +20,23 @@
  * SOFTWARE.
  */
 
-package me.sizableshrimp.entitymodeljsonexample;
+package me.sizableshrimp.entitymodeljsonexample.animated;
 
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.client.model.geom.ModelLayers;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.monster.warden.Warden;
 
-public class ExampleAnimal extends Animal {
-    protected ExampleAnimal(EntityType<? extends Animal> entityType, Level level) {
-        super(entityType, level);
+public class ExampleAnimatedEntityRenderer extends MobRenderer<Warden, ExampleAnimatedEntityModel> {
+    private static final ResourceLocation TEXTURE = new ResourceLocation("textures/entity/warden/warden.png");
+
+    public ExampleAnimatedEntityRenderer(EntityRendererProvider.Context context) {
+        super(context, new ExampleAnimatedEntityModel(context.bakeLayer(ModelLayers.WARDEN)), 0.9F);
     }
 
-    @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob parent) {
-        return null;
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.2D);
+    public ResourceLocation getTextureLocation(Warden warden) {
+        return TEXTURE;
     }
 }

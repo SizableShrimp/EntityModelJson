@@ -20,29 +20,23 @@
  * SOFTWARE.
  */
 
-package me.sizableshrimp.entitymodeljson.animation;
+package me.sizableshrimp.entitymodeljsonexample.animal;
 
-import net.minecraft.client.animation.AnimationDefinition;
-import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.client.model.HierarchicalModel;
+import net.minecraft.client.model.geom.ModelPart;
 
-import java.util.Map;
-import java.util.Optional;
+public class ExampleAnimalModel extends HierarchicalModel<ExampleAnimal> {
+    private final ModelPart root;
 
-public class EntityAnimations {
-    static Map<ResourceLocation, AnimationDefinition> definitions = Map.of();
-
-    @NotNull
-    public static Optional<AnimationDefinition> getDefinition(ResourceLocation id) {
-        return Optional.ofNullable(definitions.get(id));
+    public ExampleAnimalModel(ModelPart root) {
+        this.root = root;
     }
 
-    @NotNull
-    public static AnimationDefinition getDefinitionOrThrow(ResourceLocation id) {
-        AnimationDefinition animationDefinition = definitions.get(id);
-        if (animationDefinition == null)
-            throw new IllegalArgumentException("Missing entity animation definition with id " + id);
+    @Override
+    public void setupAnim(ExampleAnimal entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {}
 
-        return animationDefinition;
+    @Override
+    public ModelPart root() {
+        return root;
     }
 }

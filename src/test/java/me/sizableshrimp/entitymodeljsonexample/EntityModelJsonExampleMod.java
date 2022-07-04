@@ -22,10 +22,15 @@
 
 package me.sizableshrimp.entitymodeljsonexample;
 
+import me.sizableshrimp.entitymodeljsonexample.animal.ExampleAnimal;
+import me.sizableshrimp.entitymodeljsonexample.animal.ExampleAnimalRenderer;
+import me.sizableshrimp.entitymodeljsonexample.animated.ExampleAnimatedEntityRenderer;
+import me.sizableshrimp.entitymodeljsonexample.data.ExampleEntityModelProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -46,6 +51,10 @@ public class EntityModelJsonExampleMod {
 
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, MODID);
     public static final RegistryObject<EntityType<ExampleAnimal>> EXAMPLE_ANIMAL = registerEntity("animal", () -> EntityType.Builder.of(ExampleAnimal::new, MobCategory.AMBIENT));
+    public static final RegistryObject<EntityType<Warden>> EXAMPLE_ANIMATED_ENTITY = registerEntity("animated", () -> EntityType.Builder.of(Warden::new, MobCategory.MONSTER)
+            .sized(0.9F, 2.9F)
+            .clientTrackingRange(16)
+            .fireImmune());
 
     public EntityModelJsonExampleMod() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -57,11 +66,13 @@ public class EntityModelJsonExampleMod {
     @SubscribeEvent
     public void onRegisterEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EXAMPLE_ANIMAL.get(), ExampleAnimalRenderer::new);
+        event.registerEntityRenderer(EXAMPLE_ANIMATED_ENTITY.get(), ExampleAnimatedEntityRenderer::new);
     }
 
     @SubscribeEvent
     public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
         event.put(EXAMPLE_ANIMAL.get(), ExampleAnimal.createAttributes().build());
+        event.put(EXAMPLE_ANIMATED_ENTITY.get(), Warden.createAttributes().build());
     }
 
     @SubscribeEvent

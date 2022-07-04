@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 SizableShrimp
+ * Copyright (c) 2022 SizableShrimp
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,9 +20,10 @@
  * SOFTWARE.
  */
 
-package me.sizableshrimp.entitymodeljsonexample;
+package me.sizableshrimp.entitymodeljsonexample.data;
 
 import me.sizableshrimp.entitymodeljson.datagen.EntityModelProvider;
+import me.sizableshrimp.entitymodeljsonexample.EntityModelJsonExampleMod;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.data.DataGenerator;

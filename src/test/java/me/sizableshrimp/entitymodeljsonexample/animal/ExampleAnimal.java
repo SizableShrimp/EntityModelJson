@@ -20,29 +20,30 @@
  * SOFTWARE.
  */
 
-package me.sizableshrimp.entitymodeljson.animation;
+package me.sizableshrimp.entitymodeljsonexample.animal;
 
-import net.minecraft.client.animation.AnimationDefinition;
-import net.minecraft.resources.ResourceLocation;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
-import java.util.Optional;
-
-public class EntityAnimations {
-    static Map<ResourceLocation, AnimationDefinition> definitions = Map.of();
-
-    @NotNull
-    public static Optional<AnimationDefinition> getDefinition(ResourceLocation id) {
-        return Optional.ofNullable(definitions.get(id));
+public class ExampleAnimal extends Animal {
+    public ExampleAnimal(EntityType<? extends ExampleAnimal> entityType, Level level) {
+        super(entityType, level);
     }
 
-    @NotNull
-    public static AnimationDefinition getDefinitionOrThrow(ResourceLocation id) {
-        AnimationDefinition animationDefinition = definitions.get(id);
-        if (animationDefinition == null)
-            throw new IllegalArgumentException("Missing entity animation definition with id " + id);
+    @Nullable
+    @Override
+    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob parent) {
+        return null;
+    }
 
-        return animationDefinition;
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.2D);
     }
 }
