@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Minecraft Entity Model",
+  "title": "Minecraft Java Entity Model",
   "description": "Holds all the data to define an entity model displayed on the Minecraft client",
   "type": "object",
   "definitions": {
@@ -161,7 +161,7 @@
       "type": "object",
       "properties": {
         "overwrite": {
-          "description": "Determines whether a model defined in code with the same model layer location will be entirely overwritten by this model. This value does nothing if there is no model to overwrite. If set to false and another model with the same name exists, that model will be merged with this one. Merging happens by joining the children of both mesh definitions together. Children defined in this model override any other. Defaults to true.",
+          "description": "Determines whether a model defined in code or an earlier resource pack with the same model layer location will be entirely overwritten by this model. This value does nothing if there is no model to overwrite. If set to false and another model with the same name exists, that model will be merged with this one. Merging happens by joining the children of both mesh definitions together. Children defined in this model override any other. Defaults to true.",
           "type": "boolean",
           "default": true
         },
