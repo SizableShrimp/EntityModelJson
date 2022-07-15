@@ -25,7 +25,7 @@ package me.sizableshrimp.entitymodeljsonexample;
 import me.sizableshrimp.entitymodeljsonexample.animal.ExampleAnimal;
 import me.sizableshrimp.entitymodeljsonexample.animal.ExampleAnimalRenderer;
 import me.sizableshrimp.entitymodeljsonexample.animated.ExampleAnimatedEntityRenderer;
-import me.sizableshrimp.entitymodeljsonexample.data.ExampleEntityModelProvider;
+import me.sizableshrimp.entitymodeljsonexample.datagen.ExampleEntityModelProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;

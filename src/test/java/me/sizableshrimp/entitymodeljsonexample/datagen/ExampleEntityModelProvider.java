@@ -20,7 +20,7 @@
  * SOFTWARE.
  */
 
-package me.sizableshrimp.entitymodeljsonexample.data;
+package me.sizableshrimp.entitymodeljsonexample.datagen;
 
 import me.sizableshrimp.entitymodeljson.datagen.EntityModelProvider;
 import me.sizableshrimp.entitymodeljsonexample.EntityModelJsonExampleMod;

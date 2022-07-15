@@ -22,7 +22,7 @@ They can be used as a starting skeleton, or directly copied to override vanilla 
 It also uses a data generator to modify the cat's main model.
 Notable places to check out are:
   * [Example entity renderer](src/test/java/me/sizableshrimp/entitymodeljsonexample/animal/ExampleAnimalRenderer.java) - Demonstrates the model with its `ModelLayerLocation` and how to determine what file it points to
-  * [Example entity model datagen provider](src/test/java/me/sizableshrimp/entitymodeljsonexample/data/ExampleEntityModelProvider.java) - Demonstrates how to generate JSON entity models through data generation
+  * [Example entity model datagen provider](src/test/java/me/sizableshrimp/entitymodeljsonexample/datagen/ExampleEntityModelProvider.java) - Demonstrates how to generate JSON entity models through data generation
   * [Example entity model datagen output file](src/test_generated/resources/assets/minecraft/models/entity/main/cat.json) - Output file from example entity model datagen provider
   * [Entity animal entity model JSON file](src/test/resources/assets/entitymodeljsonexample/models/entity/main/example_animal.json) - Contains the armor stand entity model defined in JSON
   * [Entity Model Json dependency in mods.toml](src/test/resources/META-INF/mods.toml#L51-L57) - Demonstrates how to declare a required clientside dependency on the Entity Model JSON mod
@@ -48,6 +48,8 @@ Using `File > Open Model` (Ctrl+O) and selecting an Entity Model JSON file will 
 
 To convert existing models to the Entity Model JSON format, go to `File > Convert Project` and select `Java Entity Model JSON`.
 To export Entity Model JSON files from Blockbench, navigate to `File > Export > Export Java Entity Model JSON`.
+
+To export animations
 
 ## Dumping vanilla & modded layer definitions
 Entity Model Json supports dumping existing layer definitions in code to JSON.
