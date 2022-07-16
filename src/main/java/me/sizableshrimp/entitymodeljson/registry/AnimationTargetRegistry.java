@@ -44,7 +44,7 @@ public class AnimationTargetRegistry {
     private static final Supplier<IForgeRegistry<AnimationChannel.Target>> REGISTRY_SUPPLIER = DEFERRED_REGISTER.makeRegistry(() -> new RegistryBuilder<AnimationChannel.Target>()
             .disableSaving()
             .disableSync());
-    public static final Codec<AnimationChannel.Target> CODEC = ExtraCodecs.lazyInitializedCodec(() -> AnimationTargetRegistry.getRegistry().getCodec());
+    public static final Codec<AnimationChannel.Target> CODEC = ExtraCodecs.lazyInitializedCodec(() -> getRegistry().getCodec());
 
     public static final RegistryObject<AnimationChannel.Target> POSITION = DEFERRED_REGISTER.register("position", () -> AnimationChannel.Targets.POSITION);
     public static final RegistryObject<AnimationChannel.Target> ROTATION = DEFERRED_REGISTER.register("rotation", () -> AnimationChannel.Targets.ROTATION);

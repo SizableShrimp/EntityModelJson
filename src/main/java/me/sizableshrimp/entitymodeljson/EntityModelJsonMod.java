@@ -22,6 +22,7 @@
 
 package me.sizableshrimp.entitymodeljson;
 
+import com.mojang.logging.LogUtils;
 import me.sizableshrimp.entitymodeljson.animation.EntityAnimationJsonReloadListener;
 import me.sizableshrimp.entitymodeljson.registry.AnimationTargetRegistry;
 import me.sizableshrimp.entitymodeljson.registry.InterpolationRegistry;
@@ -37,8 +38,7 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ import java.util.List;
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EntityModelJsonMod {
     public static final String MODID = "entitymodeljson";
-    public static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public EntityModelJsonMod() {
         ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class,

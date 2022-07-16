@@ -40,13 +40,15 @@ public class SafePartDefinition extends PartDefinition {
         super(cubes, partPose);
     }
 
+    // This should stay in sync with the superclass implementation.
     @Override
     public SafeModelPart bake(int texWidth, int texHeight) {
-        Object2ObjectArrayMap<String, ModelPart> map = this.children.entrySet().stream()
+        Object2ObjectArrayMap<String, ModelPart> children = this.children.entrySet().stream()
                 .collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue().bake(texWidth, texHeight), (firstPart, secondPart) -> firstPart, Object2ObjectArrayMap::new));
-        List<ModelPart.Cube> list = this.cubes.stream().map(cube -> cube.bake(texWidth, texHeight)).toList();
+        List<ModelPart.Cube> cubes = this.cubes.stream().map(cube -> cube.bake(texWidth, texHeight)).toList();
 
-        SafeModelPart modelPart = new SafeModelPart(list, map);
+        SafeModelPart modelPart = new SafeModelPart(cubes, children);
+        modelPart.setInitialPose(this.partPose);
         modelPart.loadPose(this.partPose);
         return modelPart;
     }

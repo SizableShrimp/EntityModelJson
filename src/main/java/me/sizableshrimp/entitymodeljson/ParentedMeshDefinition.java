@@ -23,12 +23,18 @@
 package me.sizableshrimp.entitymodeljson;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ListMultimap;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeDefinition;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -39,31 +45,33 @@ public class ParentedMeshDefinition extends MeshDefinition {
     private ModelLayerLocation parent;
     private CubeDeformation universalCubeDeformation;
     private boolean overwrite;
+    private boolean fixVanillaOffset;
     private boolean calculatedInheritance;
 
     public ParentedMeshDefinition() {
-        this(null, null, null, true);
+        this(null, null, null, true, false);
     }
 
-    public ParentedMeshDefinition(@Nullable ModelLayerLocation parent, @Nullable CubeDeformation universalCubeDeformation, boolean overwrite) {
-        this(parent, universalCubeDeformation, null, overwrite);
+    public ParentedMeshDefinition(@Nullable ModelLayerLocation parent, @Nullable CubeDeformation universalCubeDeformation, boolean overwrite, boolean fixVanillaOffset) {
+        this(parent, universalCubeDeformation, null, overwrite, fixVanillaOffset);
     }
 
-    public ParentedMeshDefinition(@Nullable ModelLayerLocation parent, @Nullable CubeDeformation universalCubeDeformation, @Nullable PartDefinition root, boolean overwrite) {
+    public ParentedMeshDefinition(@Nullable ModelLayerLocation parent, @Nullable CubeDeformation universalCubeDeformation, @Nullable PartDefinition root, boolean overwrite, boolean fixVanillaOffset) {
         this.parent = parent;
         this.universalCubeDeformation = universalCubeDeformation;
         if (root != null)
             this.root = root;
         this.overwrite = overwrite;
+        this.fixVanillaOffset = fixVanillaOffset;
     }
 
     /**
-     * The parent's root part definition is used when {@link #calculateInheritance(ModelLayerLocation, Map, Map) calculating inheritance}
+     * The parent's root part definition is used when {@link #calculateInheritance(ModelLayerLocation, ListMultimap, Map) calculating inheritance}
      * to inherit cubes into this root part definition if they do not already exist
      */
     @Nullable
     public ModelLayerLocation getParent() {
-        return parent;
+        return this.parent;
     }
 
     public void setParent(@Nullable ModelLayerLocation parent) {
@@ -72,7 +80,7 @@ public class ParentedMeshDefinition extends MeshDefinition {
 
     /**
      * The universal cube deformation is additively applied to all children of the root part definition
-     * when {@link #calculateInheritance(ModelLayerLocation, Map, Map) calculating inheritance}
+     * when {@link #calculateInheritance(ModelLayerLocation, ListMultimap, Map) calculating inheritance}
      */
     @Nullable
     public CubeDeformation getUniversalCubeDeformation() {
@@ -89,7 +97,7 @@ public class ParentedMeshDefinition extends MeshDefinition {
      * Defaults to true.
      */
     public boolean isOverwrite() {
-        return overwrite;
+        return this.overwrite;
     }
 
     public void setOverwrite(boolean overwrite) {
@@ -97,10 +105,22 @@ public class ParentedMeshDefinition extends MeshDefinition {
     }
 
     /**
-     * True if {@link #calculateInheritance(ModelLayerLocation, Map, Map)} has already been called for this instance, false otherwise.
+     * True if {@link #calculateInheritance(ModelLayerLocation, ListMultimap, Map)} has already been called for this instance, false otherwise.
      */
     public boolean hasCalculatedInheritance() {
-        return calculatedInheritance;
+        return this.calculatedInheritance;
+    }
+
+    /**
+     * @return {@code true} if the root part definition should be shifted down 24 units
+     * to account for the vanilla offset of 1.501 blocks in {@link LivingEntityRenderer#render(LivingEntity, float, float, PoseStack, MultiBufferSource, int)}.
+     */
+    public boolean shouldFixVanillaOffset() {
+        return fixVanillaOffset;
+    }
+
+    public void setFixVanillaOffset(boolean fixVanillaOffset) {
+        this.fixVanillaOffset = fixVanillaOffset;
     }
 
     /**
@@ -109,15 +129,20 @@ public class ParentedMeshDefinition extends MeshDefinition {
      * Cubes in the parent are added to this mesh definition's root part definition if they do not already exist.
      * <p>
      * All children of this mesh definitions' root part definition have the universal cube deformation additively applied.
+     * <p>
+     * The root part pose is shifted down 24 units if {@link #shouldFixVanillaOffset()} is true.
      *
      * @param location The model layer location of this mesh definition, used when merging if {@link #isOverwrite() overwrite} is false
-     * @param codeRoots A possibly-null map of code-defined roots, used when merging if {@link #isOverwrite() overwrite} is false
-     * @param roots The map of model layer locations to layer definition roots, used to find parents
+     * @param prevRoots A map of previously defined roots, both in code and earlier resource packs, used when merging if {@link #isOverwrite() overwrite} is false
+     * @param roots The merged code + JSON-defined map of model layer locations to layer definition roots; used to find parents
      */
-    public void calculateInheritance(ModelLayerLocation location, @Nullable Map<ModelLayerLocation, LayerDefinition> codeRoots, Map<ModelLayerLocation, LayerDefinition> roots) {
+    public void calculateInheritance(ModelLayerLocation location, ListMultimap<ModelLayerLocation, LayerDefinition> prevRoots, Map<ModelLayerLocation, LayerDefinition> roots) {
+        if (this.calculatedInheritance)
+            return;
+
         this.calculatedInheritance = true;
-        if (!this.isOverwrite())
-            inheritChildren(getPartDefinition(codeRoots, location));
+        if (!this.overwrite)
+            prevRoots.get(location).forEach(layerDef -> inheritChildren(layerDef.mesh.getRoot()));
 
         if (parent != null)
             inheritChildren(getPartDefinition(roots, parent));
@@ -134,11 +159,24 @@ public class ParentedMeshDefinition extends MeshDefinition {
                 child.cubes = cubes;
             }
         }
+
+        boolean fixVanillaOffset = shouldFixVanillaOffset();
+
+        if (!fixVanillaOffset && !this.overwrite && this.parent != null) {
+            LayerDefinition parentLayerDef = roots.get(this.parent);
+            if (parentLayerDef != null && parentLayerDef.mesh instanceof ParentedMeshDefinition parentedMesh) {
+                fixVanillaOffset = parentedMesh.shouldFixVanillaOffset();
+            }
+        }
+
+        if (fixVanillaOffset) {
+            PartPose prevPose = getRoot().partPose;
+            // Y-axis is inverted so "up" is actually visually down
+            getRoot().partPose = PartPose.offsetAndRotation(prevPose.x, prevPose.y + 24F, prevPose.z, prevPose.xRot, prevPose.yRot, prevPose.zRot);
+        }
     }
 
     private PartDefinition getPartDefinition(Map<ModelLayerLocation, LayerDefinition> roots, ModelLayerLocation location) {
-        if (roots == null)
-            return null;
         LayerDefinition layer = roots.get(location);
         return layer == null ? null : layer.mesh.getRoot();
     }

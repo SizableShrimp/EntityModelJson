@@ -44,7 +44,7 @@ public class InterpolationRegistry {
     private static final Supplier<IForgeRegistry<AnimationChannel.Interpolation>> REGISTRY_SUPPLIER = DEFERRED_REGISTER.makeRegistry(() -> new RegistryBuilder<AnimationChannel.Interpolation>()
             .disableSaving()
             .disableSync());
-    public static final Codec<AnimationChannel.Interpolation> CODEC = ExtraCodecs.lazyInitializedCodec(() -> InterpolationRegistry.getRegistry().getCodec());
+    public static final Codec<AnimationChannel.Interpolation> CODEC = ExtraCodecs.lazyInitializedCodec(() -> getRegistry().getCodec());
 
     public static final RegistryObject<AnimationChannel.Interpolation> LINEAR = DEFERRED_REGISTER.register("linear", () -> AnimationChannel.Interpolations.LINEAR);
     public static final RegistryObject<AnimationChannel.Interpolation> CATMULLROM = DEFERRED_REGISTER.register("catmullrom", () -> AnimationChannel.Interpolations.CATMULLROM);

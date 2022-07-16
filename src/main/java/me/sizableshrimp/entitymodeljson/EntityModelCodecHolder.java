@@ -100,7 +100,9 @@ public class EntityModelCodecHolder {
                             ? parented.getUniversalCubeDeformation()
                             : null)),
             Codec.BOOL.optionalFieldOf("overwrite", true).forGetter(meshDef -> !(meshDef instanceof ParentedMeshDefinition parented) || parented.isOverwrite()),
-            PART_DEFINITION_CODEC.optionalFieldOf("root").forGetter(meshDef -> Optional.of(meshDef.getRoot()))
+            PART_DEFINITION_CODEC.optionalFieldOf("root").forGetter(meshDef -> Optional.of(meshDef.getRoot())),
+            Codec.BOOL.optionalFieldOf("fixVanillaOffset", false).forGetter(meshDef ->
+                    meshDef instanceof ParentedMeshDefinition parented && !parented.hasCalculatedInheritance() && parented.shouldFixVanillaOffset())
     ).apply(instance, EntityModelCodecHolder::createMeshDefinition));
 
     public static final Codec<LayerDefinition> LAYER_DEFINITION_CODEC = RecordCodecBuilder.create(instance -> instance.group(
@@ -151,13 +153,13 @@ public class EntityModelCodecHolder {
     }
 
     private static MeshDefinition createMeshDefinition(Optional<ModelLayerLocation> parentOptional, Optional<CubeDeformation> universalCubeDeformation, boolean overwrite,
-            Optional<PartDefinition> rootOpt) {
+            Optional<PartDefinition> rootOpt, boolean fixVanillaOffset) {
         rootOpt.ifPresent(root -> {
             // Ensure no cubes or a part pose can be defined for the root node.
             root.cubes = List.of();
             root.partPose = PartPose.ZERO;
         });
-        return new ParentedMeshDefinition(parentOptional.orElse(null), universalCubeDeformation.orElse(null), rootOpt.orElse(null), overwrite);
+        return new ParentedMeshDefinition(parentOptional.orElse(null), universalCubeDeformation.orElse(null), rootOpt.orElse(null), overwrite, fixVanillaOffset);
     }
 
     private static boolean partPoseEquals(PartPose a, PartPose b) {

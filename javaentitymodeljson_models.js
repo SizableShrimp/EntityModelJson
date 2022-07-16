@@ -20,14 +20,14 @@
  * SOFTWARE.
  */
 
-(function() {
+(function () {
 
     const CODEC = new Codec("javaentitymodeljson_entity", {
         name: "Java Entity Model JSON",
         load_filter: {
             extensions: ["json"],
             type: "json",
-            condition: function(json) {
+            condition: function (json) {
                 return "mesh" in json;
             }
         },
@@ -99,6 +99,8 @@
         centered_grid: true,
         rotate_cubes: true,
         display_mode: true,
+        animation_mode: true,
+        // animation_files: true,
         codec: CODEC,
         onActivation() {
             MenuBar.addAction(CODEC.export_action, "file.export")
@@ -112,11 +114,133 @@
     Plugin.register("javaentitymodeljson_models", {
         title: "Java Entity Model JSON Support",
         author: "SizableShrimp",
-        description: "Create models to be used with https://github.com/SizableShrimp/EntityModelJson",
+        description: "Create models and animations to be used with https://github.com/SizableShrimp/EntityModelJson",
         icon: "icon-format_java",
-        version: "1.0",
-        variant: "both"
-    })
+        version: "1.1.0",
+        variant: "both",
+        about: 'This plugin adds support for exporting models and keyframe animations to JSON files for use with the Entity Model JSON mod. ' +
+            '(Molang and step interpolation are not supported for animations.)',
+        tags: ["Minecraft: Java Edition"],
+        onload() {
+            // TODO support importing animation definitions
+            let animationMenu = Animation.prototype.menu;
+            if (animationMenu != null && animationMenu.structure instanceof Array) {
+                let prevIdx = animationMenu.structure.findIndex(e => e.id === 'export_animation_definition_json');
+                if (prevIdx !== -1)
+                    animationMenu.structure.splice(prevIdx, 1);
+                let saveIdx = animationMenu.structure.findIndex(e => e.id === "save");
+                animationMenu.structure.splice(saveIdx + 1, 0, {
+                    id: 'export_animation_definition_json',
+                    name: 'Export Animation Definition',
+                    description: 'Exports this animation to a JSON animation definition for use with Entity Model JSON',
+                    icon: 'fa-file-export',
+                    click(animation) {
+                        let contents = generateAnimationDefinition(animation);
+                        Blockbench.export({
+                            resource_id: 'animation_definition_json',
+                            type: 'Animation Definition',
+                            extensions: ['json'],
+                            savetype: 'json',
+                            name: animation.name.replaceAll('.', '_').replace('animation_', ''),
+                            content: contents
+                        });
+                    }
+                });
+            }
+        },
+        onunload() {
+            let animationMenu = Animation.prototype.menu;
+            if (animationMenu != null && animationMenu.structure instanceof Array) {
+                let removeIdx = animationMenu.structure.findIndex(e => e.id === 'export_animation_definition_json');
+                animationMenu.structure.splice(removeIdx, 1);
+            }
+        }
+    });
+
+    // function hasArgs(easing) {
+    //     return easing.includes("Back") ||
+    //         easing.includes("Elastic") ||
+    //         easing.includes("Bounce") ||
+    //         easing === EASING_OPTIONS.step;
+    // }
+
+    function compileKeyFrame(keyFrame, targetFactory) {
+        let target = keyFrame.data_points[0];
+        target = {x: parseFloat(target.x), y: parseFloat(target.y), z: parseFloat(target.z)};
+        let compiled = {timestamp: keyFrame.time, target: targetFactory(target)};
+
+        // let setEasing = false;
+        // if (keyFrame.easing != null && Plugins.installed.some(e => e.id === 'animation_utils')) {
+        //     let easingType = keyFrame.easing;
+        //     if (hasArgs(easingType)) {
+        //         if (Array.isArray(keyFrame.easingArgs) && keyFrame.easingArgs.length > 0) {
+        //             // MISSING
+        //             setEasing = true;
+        //         }
+        //     } else {
+        //         let compiledInterp = {};
+        //         if (easingType.includes('In')) compiledInterp.easeIn = true;
+        //         if (easingType.includes('Out')) compiledInterp.easeOut = true;
+        //
+        //         if (Object.keys(compiledInterp).length > 0) {
+        //             compiledInterp.type = easingType.replaceAll('In', '').replaceAll('Out', '');
+        //         } else {
+        //             compiledInterp = easingType;
+        //         }
+        //
+        //         compiled.interpolation = compiledInterp;
+        //         setEasing = true;
+        //     }
+        // }
+
+        if (/*!setEasing && */keyFrame.interpolation != null) {
+            compiled.interpolation = keyFrame.interpolation;
+        }
+
+        return compiled;
+    }
+
+    function pushKeyFrames(channels, channelTarget, keyFrames, targetFactory) {
+        if (!keyFrames.length) return
+
+        let channel = {target: channelTarget, keyframes: []};
+        channels.push(channel);
+
+        for (const keyFrame of keyFrames) {
+            channel.keyframes.push(compileKeyFrame(keyFrame, targetFactory));
+        }
+    }
+
+    function generateAnimationDefinition(animation) {
+        let compiled = {lengthInSeconds: animation.length, boneAnimations: {}};
+
+        if (animation.loop === "loop") {
+            compiled.looping = true;
+        }
+
+        for (const id in animation.animators) {
+            const boneAnimator = animation.animators[id];
+            if (!(boneAnimator instanceof BoneAnimator)) continue;
+
+            let channels = [];
+
+            pushKeyFrames(channels, 'position', boneAnimator.position, function (target) {
+                return [target.x, -target.y, target.z];
+            });
+            pushKeyFrames(channels, 'rotation', boneAnimator.rotation, function (target) {
+                return [Math.degToRad(target.x), Math.degToRad(target.y), Math.degToRad(target.z)];
+            });
+            pushKeyFrames(channels, 'scale', boneAnimator.scale, function (target) {
+                return [target.x - 1.0, target.y - 1.0, target.z - 1.0];
+            });
+
+            if (channels.length) {
+                compiled.boneAnimations[boneAnimator._name] = channels;
+            }
+        }
+
+        return JSON.stringify(compiled, null, 2);
+    }
 
     function flipCoords(vec) {
         return [-vec[0], -vec[1], vec[2]];
@@ -141,7 +265,7 @@
         let origin = pOrigin;
         if ("partPose" in bone) {
             let partPose = bone.partPose;
-            origin = [origin[0] + partPose.x, origin[1] + partPose.y, origin[2] + partPose.z];
+            origin = [origin[0] + (partPose.x || 0), origin[1] + (partPose.y || 0), origin[2] + (partPose.z || 0)];
             groupOptions.rotation = [
                 "xRot" in partPose ? -Math.radToDeg(partPose.xRot) : 0,
                 "yRot" in partPose ? -Math.radToDeg(partPose.yRot) : 0,
@@ -165,8 +289,8 @@
                 if ("comment" in cube) {
                     cubeOptions.name = cube.comment;
                 }
-                if ("dilation" in cube) {
-                    cubeOptions.inflate = cube.dilation instanceof Array ? cube.dilation[0] : cube.dilation;
+                if ("grow" in cube) {
+                    cubeOptions.inflate = cube.grow instanceof Array ? cube.grow[0] : cube.grow;
                 }
                 if ("mirror" in cube) {
                     cubeOptions.mirror_uv = cube.mirror;

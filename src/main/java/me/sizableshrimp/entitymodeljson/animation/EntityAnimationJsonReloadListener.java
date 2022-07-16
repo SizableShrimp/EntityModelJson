@@ -25,20 +25,20 @@ package me.sizableshrimp.entitymodeljson.animation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.mojang.logging.LogUtils;
 import com.mojang.serialization.JsonOps;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class EntityAnimationJsonReloadListener extends SimpleJsonResourceReloadListener {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogUtils.getLogger();
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
     public EntityAnimationJsonReloadListener() {
@@ -51,7 +51,7 @@ public class EntityAnimationJsonReloadListener extends SimpleJsonResourceReloadL
 
         for (var entry : animationJsons.entrySet()) {
             EntityAnimationCodecHolder.ANIMATION_DEFINITION_CODEC.parse(JsonOps.INSTANCE, entry.getValue())
-                    .resultOrPartial(e -> LOGGER.warn("Error while parsing entity animation json: {}", e))
+                    .resultOrPartial(e -> LOGGER.warn("Error while parsing entity animation json with id {} - {}", entry.getKey(), e))
                     .ifPresent(animationDefinition -> definitions.put(entry.getKey(), animationDefinition));
         }
 
