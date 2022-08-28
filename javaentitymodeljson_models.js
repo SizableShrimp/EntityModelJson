@@ -235,7 +235,7 @@
             });
 
             if (channels.length) {
-                compiled.boneAnimations[boneAnimator._name] = channels;
+                compiled.boneAnimations[boneAnimator.name] = channels;
             }
         }
 
